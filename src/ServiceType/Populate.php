@@ -8,10 +8,10 @@ use SoapFault;
 use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 
 /**
- * This class stands for Remove ServiceType
+ * This class stands for Populate ServiceType
  * @subpackage Services
  */
-class Remove extends AbstractSoapClientBase
+class Populate extends AbstractSoapClientBase
 {
     /**
      * Sets the MidocoCredentials SoapHeader param
@@ -20,14 +20,14 @@ class Remove extends AbstractSoapClientBase
      * @param string $namespace
      * @param bool $mustUnderstand
      * @param string|null $actor
-     * @return \Pggns\MidocoApi\OrderSD\ServiceType\Remove
+     * @return \Pggns\MidocoApi\OrderSD\ServiceType\Populate
      */
     public function setSoapHeaderMidocoCredentials(\Pggns\MidocoApi\OrderSD\StructType\MidocoCredentialsType $midocoCredentials, string $namespace = 'http://www.midoco.de/system', bool $mustUnderstand = false, ?string $actor = null): self
     {
         return $this->setSoapHeader($namespace, 'MidocoCredentials', $midocoCredentials, $mustUnderstand, $actor);
     }
     /**
-     * Method to call the operation originally named removeOrdCriteriaTypesFromCategory
+     * Method to call the operation originally named populateChangeLogInitially
      * Meta information extracted from the WSDL
      * - SOAPHeaderNames: MidocoCredentials
      * - SOAPHeaderNamespaces: http://www.midoco.de/system
@@ -36,17 +36,17 @@ class Remove extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Pggns\MidocoApi\OrderSD\StructType\RemoveOrdCriteriaTypesFromCategoryRequest $paramRemoveOrdCriteriaTypesFromCategoryRequest
-     * @return \Pggns\MidocoApi\OrderSD\StructType\RemoveOrdCriteriaTypesFromCategoryResponse|bool
+     * @param \Pggns\MidocoApi\OrderSD\StructType\PopulateChangeLogInitiallyRequest $paramPopulateChangeLogInitiallyRequest
+     * @return \Pggns\MidocoApi\OrderSD\StructType\PopulateChangeLogInitiallyResponse|bool
      */
-    public function removeOrdCriteriaTypesFromCategory(\Pggns\MidocoApi\OrderSD\StructType\RemoveOrdCriteriaTypesFromCategoryRequest $paramRemoveOrdCriteriaTypesFromCategoryRequest)
+    public function populateChangeLogInitially(\Pggns\MidocoApi\OrderSD\StructType\PopulateChangeLogInitiallyRequest $paramPopulateChangeLogInitiallyRequest)
     {
         try {
-            $this->setResult($resultRemoveOrdCriteriaTypesFromCategory = $this->getSoapClient()->__soapCall('removeOrdCriteriaTypesFromCategory', [
-                $paramRemoveOrdCriteriaTypesFromCategoryRequest,
+            $this->setResult($resultPopulateChangeLogInitially = $this->getSoapClient()->__soapCall('populateChangeLogInitially', [
+                $paramPopulateChangeLogInitiallyRequest,
             ], [], [], $this->outputHeaders));
         
-            return $resultRemoveOrdCriteriaTypesFromCategory;
+            return $resultPopulateChangeLogInitially;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
         
@@ -56,7 +56,7 @@ class Remove extends AbstractSoapClientBase
     /**
      * Returns the result
      * @see AbstractSoapClientBase::getResult()
-     * @return \Pggns\MidocoApi\OrderSD\StructType\RemoveOrdCriteriaTypesFromCategoryResponse
+     * @return \Pggns\MidocoApi\OrderSD\StructType\PopulateChangeLogInitiallyResponse
      */
     public function getResult()
     {

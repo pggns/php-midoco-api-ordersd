@@ -37,20 +37,31 @@ class GetFeeGroupAssignsRequest extends AbstractStructBase
      */
     protected ?bool $onlyFromOwnDb = null;
     /**
+     * The isValid
+     * Meta information extracted from the WSDL
+     * - documentation: Check if fee is deleted
+     * - default: false
+     * @var bool|null
+     */
+    protected ?bool $isValid = null;
+    /**
      * Constructor method for GetFeeGroupAssignsRequest
      * @uses GetFeeGroupAssignsRequest::setMidocoFeeGroupAssign()
      * @uses GetFeeGroupAssignsRequest::setGroupId()
      * @uses GetFeeGroupAssignsRequest::setOnlyFromOwnDb()
+     * @uses GetFeeGroupAssignsRequest::setIsValid()
      * @param \Pggns\MidocoApi\OrderSD\StructType\MidocoFeeGroupAssign $midocoFeeGroupAssign
      * @param int[] $groupId
      * @param bool $onlyFromOwnDb
+     * @param bool $isValid
      */
-    public function __construct(?\Pggns\MidocoApi\OrderSD\StructType\MidocoFeeGroupAssign $midocoFeeGroupAssign = null, ?array $groupId = null, ?bool $onlyFromOwnDb = false)
+    public function __construct(?\Pggns\MidocoApi\OrderSD\StructType\MidocoFeeGroupAssign $midocoFeeGroupAssign = null, ?array $groupId = null, ?bool $onlyFromOwnDb = false, ?bool $isValid = false)
     {
         $this
             ->setMidocoFeeGroupAssign($midocoFeeGroupAssign)
             ->setGroupId($groupId)
-            ->setOnlyFromOwnDb($onlyFromOwnDb);
+            ->setOnlyFromOwnDb($onlyFromOwnDb)
+            ->setIsValid($isValid);
     }
     /**
      * Get MidocoFeeGroupAssign value
@@ -158,6 +169,29 @@ class GetFeeGroupAssignsRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($onlyFromOwnDb, true), gettype($onlyFromOwnDb)), __LINE__);
         }
         $this->onlyFromOwnDb = $onlyFromOwnDb;
+        
+        return $this;
+    }
+    /**
+     * Get isValid value
+     * @return bool|null
+     */
+    public function getIsValid(): ?bool
+    {
+        return $this->isValid;
+    }
+    /**
+     * Set isValid value
+     * @param bool $isValid
+     * @return \Pggns\MidocoApi\OrderSD\StructType\GetFeeGroupAssignsRequest
+     */
+    public function setIsValid(?bool $isValid = false): self
+    {
+        // validation for constraint: boolean
+        if (!is_null($isValid) && !is_bool($isValid)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($isValid, true), gettype($isValid)), __LINE__);
+        }
+        $this->isValid = $isValid;
         
         return $this;
     }

@@ -507,22 +507,6 @@ if ($save->saveSupplierDisabledUnits(new \Pggns\MidocoApi\OrderSD\StructType\Sav
     print_r($save->getLastError());
 }
 /**
- * Sample call for saveOrdCriteriaTypeCategoryDescription operation/method
- */
-if ($save->saveOrdCriteriaTypeCategoryDescription(new \Pggns\MidocoApi\OrderSD\StructType\SaveOrdCriteriaTypeCategoryDescriptionRequest()) !== false) {
-    print_r($save->getResult());
-} else {
-    print_r($save->getLastError());
-}
-/**
- * Sample call for saveOrdCriteriaTypeCategory operation/method
- */
-if ($save->saveOrdCriteriaTypeCategory(new \Pggns\MidocoApi\OrderSD\StructType\SaveOrdCriteriaTypeCategoryRequest()) !== false) {
-    print_r($save->getResult());
-} else {
-    print_r($save->getLastError());
-}
-/**
  * Sample call for saveProductTypeSupplier operation/method
  */
 if ($save->saveProductTypeSupplier(new \Pggns\MidocoApi\OrderSD\StructType\SaveProductTypeSupplierRequest()) !== false) {
@@ -928,6 +912,14 @@ if ($delete->deleteBookingText(new \Pggns\MidocoApi\OrderSD\StructType\DeleteBoo
     print_r($delete->getLastError());
 }
 /**
+ * Sample call for deleteMidocoSupplierImportFormat operation/method
+ */
+if ($delete->deleteMidocoSupplierImportFormat(new \Pggns\MidocoApi\OrderSD\StructType\DeleteMidocoSupplierImportFormatRequest()) !== false) {
+    print_r($delete->getResult());
+} else {
+    print_r($delete->getLastError());
+}
+/**
  * Sample call for deleteMidocoSettlementType operation/method
  */
 if ($delete->deleteMidocoSettlementType(new \Pggns\MidocoApi\OrderSD\StructType\DeleteMidocoSettlementTypeRequest()) !== false) {
@@ -1067,22 +1059,6 @@ if ($delete->deleteSupplierDocument(new \Pggns\MidocoApi\OrderSD\StructType\Dele
  * Sample call for deleteSupplierDisabledUnits operation/method
  */
 if ($delete->deleteSupplierDisabledUnits(new \Pggns\MidocoApi\OrderSD\StructType\DeleteSupplierDisabledUnitsRequest()) !== false) {
-    print_r($delete->getResult());
-} else {
-    print_r($delete->getLastError());
-}
-/**
- * Sample call for deleteOrdCriteriaTypeCategoryDescription operation/method
- */
-if ($delete->deleteOrdCriteriaTypeCategoryDescription(new \Pggns\MidocoApi\OrderSD\StructType\DeleteOrdCriteriaTypeCategoryDescriptionRequest()) !== false) {
-    print_r($delete->getResult());
-} else {
-    print_r($delete->getLastError());
-}
-/**
- * Sample call for deleteOrdCriteriaTypeCategory operation/method
- */
-if ($delete->deleteOrdCriteriaTypeCategory(new \Pggns\MidocoApi\OrderSD\StructType\DeleteOrdCriteriaTypeCategoryRequest()) !== false) {
     print_r($delete->getResult());
 } else {
     print_r($delete->getLastError());
@@ -1845,6 +1821,14 @@ if ($get->getSupplierDisabledUnits(new \Pggns\MidocoApi\OrderSD\StructType\GetSu
     print_r($get->getLastError());
 }
 /**
+ * Sample call for getUnitDisabledSuppliers operation/method
+ */
+if ($get->getUnitDisabledSuppliers(new \Pggns\MidocoApi\OrderSD\StructType\GetUnitDisabledSuppliersRequest()) !== false) {
+    print_r($get->getResult());
+} else {
+    print_r($get->getLastError());
+}
+/**
  * Sample call for getSupplierDocuments operation/method
  */
 if ($get->getSupplierDocuments(new \Pggns\MidocoApi\OrderSD\StructType\GetSupplierDocumentsRequest()) !== false) {
@@ -1864,22 +1848,6 @@ if ($get->getMidocoSettlementTypeForSupplier(new \Pggns\MidocoApi\OrderSD\Struct
  * Sample call for getProductTypeSupplier operation/method
  */
 if ($get->getProductTypeSupplier(new \Pggns\MidocoApi\OrderSD\StructType\GetProductTypeSupplierRequest()) !== false) {
-    print_r($get->getResult());
-} else {
-    print_r($get->getLastError());
-}
-/**
- * Sample call for getOrdCriteriaTypeCategoryDescriptions operation/method
- */
-if ($get->getOrdCriteriaTypeCategoryDescriptions(new \Pggns\MidocoApi\OrderSD\StructType\GetOrdCriteriaTypeCategoryDescriptionsRequest()) !== false) {
-    print_r($get->getResult());
-} else {
-    print_r($get->getLastError());
-}
-/**
- * Sample call for getOrdCriteriaTypesForCategory operation/method
- */
-if ($get->getOrdCriteriaTypesForCategory(new \Pggns\MidocoApi\OrderSD\StructType\GetOrdCriteriaTypesForCategoryRequest()) !== false) {
     print_r($get->getResult());
 } else {
     print_r($get->getLastError());
@@ -2207,14 +2175,6 @@ if ($list->listMidocoQuestionValue(new \Pggns\MidocoApi\OrderSD\StructType\ListM
     print_r($list->getLastError());
 }
 /**
- * Sample call for listOrdCriteriaTypeCategories operation/method
- */
-if ($list->listOrdCriteriaTypeCategories(new \Pggns\MidocoApi\OrderSD\StructType\ListOrdCriteriaTypeCategoriesRequest()) !== false) {
-    print_r($list->getResult());
-} else {
-    print_r($list->getLastError());
-}
-/**
  * Sample call for listSupplierCommissionConditions operation/method
  */
 if ($list->listSupplierCommissionConditions(new \Pggns\MidocoApi\OrderSD\StructType\ListSupplierCommissionConditionsRequest()) !== false) {
@@ -2289,14 +2249,6 @@ if ($assign->assignMidocoRuleSet(new \Pggns\MidocoApi\OrderSD\StructType\AssignM
  * Sample call for assignTemplateToSuppliers operation/method
  */
 if ($assign->assignTemplateToSuppliers(new \Pggns\MidocoApi\OrderSD\StructType\TemplateSuppliersAssignType()) !== false) {
-    print_r($assign->getResult());
-} else {
-    print_r($assign->getLastError());
-}
-/**
- * Sample call for assignOrdCriteriaTypesToCategory operation/method
- */
-if ($assign->assignOrdCriteriaTypesToCategory(new \Pggns\MidocoApi\OrderSD\StructType\AssignOrdCriteriaTypesToCategoryRequest()) !== false) {
     print_r($assign->getResult());
 } else {
     print_r($assign->getLastError());
@@ -2412,19 +2364,6 @@ if ($load->loadOrdTypeValuesAndDescriptions(new \Pggns\MidocoApi\OrderSD\StructT
     print_r($load->getLastError());
 }
 /**
- * Samples for Remove ServiceType
- */
-$remove = new \Pggns\MidocoApi\OrderSD\ServiceType\Remove($options);
-$remove->setSoapHeaderMidocoCredentials($MidocoCredentials);
-/**
- * Sample call for removeOrdCriteriaTypesFromCategory operation/method
- */
-if ($remove->removeOrdCriteriaTypesFromCategory(new \Pggns\MidocoApi\OrderSD\StructType\RemoveOrdCriteriaTypesFromCategoryRequest()) !== false) {
-    print_r($remove->getResult());
-} else {
-    print_r($remove->getLastError());
-}
-/**
  * Samples for Has ServiceType
  */
 $has = new \Pggns\MidocoApi\OrderSD\ServiceType\Has($options);
@@ -2436,4 +2375,17 @@ if ($has->hasTravelNumberSequence(new \Pggns\MidocoApi\OrderSD\StructType\HasTra
     print_r($has->getResult());
 } else {
     print_r($has->getLastError());
+}
+/**
+ * Samples for Populate ServiceType
+ */
+$populate = new \Pggns\MidocoApi\OrderSD\ServiceType\Populate($options);
+$populate->setSoapHeaderMidocoCredentials($MidocoCredentials);
+/**
+ * Sample call for populateChangeLogInitially operation/method
+ */
+if ($populate->populateChangeLogInitially(new \Pggns\MidocoApi\OrderSD\StructType\PopulateChangeLogInitiallyRequest()) !== false) {
+    print_r($populate->getResult());
+} else {
+    print_r($populate->getLastError());
 }

@@ -60,6 +60,16 @@ class FeeAssignDTO extends AbstractStructBase
      */
     protected ?int $countSegments = null;
     /**
+     * The countryCodes
+     * @var string|null
+     */
+    protected ?string $countryCodes = null;
+    /**
+     * The creationTimestamp
+     * @var string|null
+     */
+    protected ?string $creationTimestamp = null;
+    /**
      * The dbUsePerMatch
      * @var bool|null
      */
@@ -69,6 +79,21 @@ class FeeAssignDTO extends AbstractStructBase
      * @var string|null
      */
     protected ?string $debitorNo = null;
+    /**
+     * The deletedReason
+     * @var string|null
+     */
+    protected ?string $deletedReason = null;
+    /**
+     * The deletedTimestamp
+     * @var string|null
+     */
+    protected ?string $deletedTimestamp = null;
+    /**
+     * The deletedUser
+     * @var int|null
+     */
+    protected ?int $deletedUser = null;
     /**
      * The departureCode
      * @var string|null
@@ -169,6 +194,11 @@ class FeeAssignDTO extends AbstractStructBase
      * @var bool|null
      */
     protected ?bool $isAbsoluteFeePercent = null;
+    /**
+     * The isDeleted
+     * @var bool|null
+     */
+    protected ?bool $isDeleted = null;
     /**
      * The isDomestic
      * @var bool|null
@@ -435,8 +465,13 @@ class FeeAssignDTO extends AbstractStructBase
      * @uses FeeAssignDTO::setBspCode()
      * @uses FeeAssignDTO::setCompanyTariff()
      * @uses FeeAssignDTO::setCountSegments()
+     * @uses FeeAssignDTO::setCountryCodes()
+     * @uses FeeAssignDTO::setCreationTimestamp()
      * @uses FeeAssignDTO::setDbUsePerMatch()
      * @uses FeeAssignDTO::setDebitorNo()
+     * @uses FeeAssignDTO::setDeletedReason()
+     * @uses FeeAssignDTO::setDeletedTimestamp()
+     * @uses FeeAssignDTO::setDeletedUser()
      * @uses FeeAssignDTO::setDepartureCode()
      * @uses FeeAssignDTO::setDepartureGeographicalCategory()
      * @uses FeeAssignDTO::setDestinationCode()
@@ -457,6 +492,7 @@ class FeeAssignDTO extends AbstractStructBase
      * @uses FeeAssignDTO::setFeeValue()
      * @uses FeeAssignDTO::setGeographicalCategory()
      * @uses FeeAssignDTO::setIsAbsoluteFeePercent()
+     * @uses FeeAssignDTO::setIsDeleted()
      * @uses FeeAssignDTO::setIsDomestic()
      * @uses FeeAssignDTO::setIsExplicit()
      * @uses FeeAssignDTO::setIsNettoFeeValue()
@@ -517,8 +553,13 @@ class FeeAssignDTO extends AbstractStructBase
      * @param string $bspCode
      * @param bool $companyTariff
      * @param int $countSegments
+     * @param string $countryCodes
+     * @param string $creationTimestamp
      * @param bool $dbUsePerMatch
      * @param string $debitorNo
+     * @param string $deletedReason
+     * @param string $deletedTimestamp
+     * @param int $deletedUser
      * @param string $departureCode
      * @param string $departureGeographicalCategory
      * @param string $destinationCode
@@ -539,6 +580,7 @@ class FeeAssignDTO extends AbstractStructBase
      * @param float $feeValue
      * @param string $geographicalCategory
      * @param bool $isAbsoluteFeePercent
+     * @param bool $isDeleted
      * @param bool $isDomestic
      * @param bool $isExplicit
      * @param bool $isNettoFeeValue
@@ -591,7 +633,7 @@ class FeeAssignDTO extends AbstractStructBase
      * @param string $validFrom
      * @param string $validUntil
      */
-    public function __construct(?string $accountId = null, ?string $airline = null, ?bool $assumeTicketTaxPercent = null, ?string $bookingClass = null, ?string $bookingSource = null, ?string $bookingSourceExt = null, ?string $bspCode = null, ?bool $companyTariff = null, ?int $countSegments = null, ?bool $dbUsePerMatch = null, ?string $debitorNo = null, ?string $departureCode = null, ?string $departureGeographicalCategory = null, ?string $destinationCode = null, ?string $documentSubgroupEmd = null, ?string $documentSubtype = null, ?string $documentSubtypeEmd = null, ?string $endTravelFrom = null, ?string $endTravelTo = null, ?string $extPaymentType = null, ?string $fareType = null, ?int $feeAssignId = null, ?string $feeCategory = null, ?string $feeCode = null, ?string $feeGroup = null, ?int $feeGroupId = null, ?float $feePercent = null, ?int $feePriority = null, ?float $feeValue = null, ?string $geographicalCategory = null, ?bool $isAbsoluteFeePercent = null, ?bool $isDomestic = null, ?bool $isExplicit = null, ?bool $isNettoFeeValue = null, ?bool $isOrderFee = null, ?bool $isPercentValueRounded = null, ?bool $isUseCustomerCurrency = null, ?string $itemType = null, ?float $maxFeeValue = null, ?float $minFeeValue = null, ?bool $noFeePrevDay = null, ?string $noFeePrevDayCategory = null, ?bool $noFeeSameDay = null, ?string $noFeeSameDayCategory = null, ?bool $oneFeeRelatedTicketsImport = null, ?string $orderAttribute = null, ?string $orderAttribute2 = null, ?string $orderAttribute3 = null, ?string $orderAttributeValue = null, ?string $orderAttributeValue2 = null, ?string $orderAttributeValue3 = null, ?string $paymentType = null, ?float $priceFrom = null, ?float $priceTo = null, ?string $railDescription = null, ?string $revenue = null, ?float $revenuePercent = null, ?bool $reverseTrip = null, ?bool $segmentMultiply = null, ?int $segmentValueSet = null, ?string $sellitemAttribute = null, ?string $sellitemAttribute2 = null, ?string $sellitemAttribute3 = null, ?string $sellitemAttributeValue = null, ?string $sellitemAttributeValue2 = null, ?string $sellitemAttributeValue3 = null, ?string $sellitemStati = null, ?string $startTravelFrom = null, ?string $startTravelTo = null, ?string $supplierGroup = null, ?string $supplierId = null, ?string $ticketDesignator = null, ?string $ticketOrigin = null, ?string $ticketType = null, ?bool $travellerMultiply = null, ?string $traveltype = null, ?string $unitName = null, ?bool $useCorporateDiscount = null, ?bool $useGlobalPrice = null, ?bool $useGroupAmount = null, ?string $validFrom = null, ?string $validUntil = null)
+    public function __construct(?string $accountId = null, ?string $airline = null, ?bool $assumeTicketTaxPercent = null, ?string $bookingClass = null, ?string $bookingSource = null, ?string $bookingSourceExt = null, ?string $bspCode = null, ?bool $companyTariff = null, ?int $countSegments = null, ?string $countryCodes = null, ?string $creationTimestamp = null, ?bool $dbUsePerMatch = null, ?string $debitorNo = null, ?string $deletedReason = null, ?string $deletedTimestamp = null, ?int $deletedUser = null, ?string $departureCode = null, ?string $departureGeographicalCategory = null, ?string $destinationCode = null, ?string $documentSubgroupEmd = null, ?string $documentSubtype = null, ?string $documentSubtypeEmd = null, ?string $endTravelFrom = null, ?string $endTravelTo = null, ?string $extPaymentType = null, ?string $fareType = null, ?int $feeAssignId = null, ?string $feeCategory = null, ?string $feeCode = null, ?string $feeGroup = null, ?int $feeGroupId = null, ?float $feePercent = null, ?int $feePriority = null, ?float $feeValue = null, ?string $geographicalCategory = null, ?bool $isAbsoluteFeePercent = null, ?bool $isDeleted = null, ?bool $isDomestic = null, ?bool $isExplicit = null, ?bool $isNettoFeeValue = null, ?bool $isOrderFee = null, ?bool $isPercentValueRounded = null, ?bool $isUseCustomerCurrency = null, ?string $itemType = null, ?float $maxFeeValue = null, ?float $minFeeValue = null, ?bool $noFeePrevDay = null, ?string $noFeePrevDayCategory = null, ?bool $noFeeSameDay = null, ?string $noFeeSameDayCategory = null, ?bool $oneFeeRelatedTicketsImport = null, ?string $orderAttribute = null, ?string $orderAttribute2 = null, ?string $orderAttribute3 = null, ?string $orderAttributeValue = null, ?string $orderAttributeValue2 = null, ?string $orderAttributeValue3 = null, ?string $paymentType = null, ?float $priceFrom = null, ?float $priceTo = null, ?string $railDescription = null, ?string $revenue = null, ?float $revenuePercent = null, ?bool $reverseTrip = null, ?bool $segmentMultiply = null, ?int $segmentValueSet = null, ?string $sellitemAttribute = null, ?string $sellitemAttribute2 = null, ?string $sellitemAttribute3 = null, ?string $sellitemAttributeValue = null, ?string $sellitemAttributeValue2 = null, ?string $sellitemAttributeValue3 = null, ?string $sellitemStati = null, ?string $startTravelFrom = null, ?string $startTravelTo = null, ?string $supplierGroup = null, ?string $supplierId = null, ?string $ticketDesignator = null, ?string $ticketOrigin = null, ?string $ticketType = null, ?bool $travellerMultiply = null, ?string $traveltype = null, ?string $unitName = null, ?bool $useCorporateDiscount = null, ?bool $useGlobalPrice = null, ?bool $useGroupAmount = null, ?string $validFrom = null, ?string $validUntil = null)
     {
         $this
             ->setAccountId($accountId)
@@ -603,8 +645,13 @@ class FeeAssignDTO extends AbstractStructBase
             ->setBspCode($bspCode)
             ->setCompanyTariff($companyTariff)
             ->setCountSegments($countSegments)
+            ->setCountryCodes($countryCodes)
+            ->setCreationTimestamp($creationTimestamp)
             ->setDbUsePerMatch($dbUsePerMatch)
             ->setDebitorNo($debitorNo)
+            ->setDeletedReason($deletedReason)
+            ->setDeletedTimestamp($deletedTimestamp)
+            ->setDeletedUser($deletedUser)
             ->setDepartureCode($departureCode)
             ->setDepartureGeographicalCategory($departureGeographicalCategory)
             ->setDestinationCode($destinationCode)
@@ -625,6 +672,7 @@ class FeeAssignDTO extends AbstractStructBase
             ->setFeeValue($feeValue)
             ->setGeographicalCategory($geographicalCategory)
             ->setIsAbsoluteFeePercent($isAbsoluteFeePercent)
+            ->setIsDeleted($isDeleted)
             ->setIsDomestic($isDomestic)
             ->setIsExplicit($isExplicit)
             ->setIsNettoFeeValue($isNettoFeeValue)
@@ -885,6 +933,52 @@ class FeeAssignDTO extends AbstractStructBase
         return $this;
     }
     /**
+     * Get countryCodes value
+     * @return string|null
+     */
+    public function getCountryCodes(): ?string
+    {
+        return $this->countryCodes;
+    }
+    /**
+     * Set countryCodes value
+     * @param string $countryCodes
+     * @return \Pggns\MidocoApi\OrderSD\StructType\FeeAssignDTO
+     */
+    public function setCountryCodes(?string $countryCodes = null): self
+    {
+        // validation for constraint: string
+        if (!is_null($countryCodes) && !is_string($countryCodes)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($countryCodes, true), gettype($countryCodes)), __LINE__);
+        }
+        $this->countryCodes = $countryCodes;
+        
+        return $this;
+    }
+    /**
+     * Get creationTimestamp value
+     * @return string|null
+     */
+    public function getCreationTimestamp(): ?string
+    {
+        return $this->creationTimestamp;
+    }
+    /**
+     * Set creationTimestamp value
+     * @param string $creationTimestamp
+     * @return \Pggns\MidocoApi\OrderSD\StructType\FeeAssignDTO
+     */
+    public function setCreationTimestamp(?string $creationTimestamp = null): self
+    {
+        // validation for constraint: string
+        if (!is_null($creationTimestamp) && !is_string($creationTimestamp)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($creationTimestamp, true), gettype($creationTimestamp)), __LINE__);
+        }
+        $this->creationTimestamp = $creationTimestamp;
+        
+        return $this;
+    }
+    /**
      * Get dbUsePerMatch value
      * @return bool|null
      */
@@ -927,6 +1021,75 @@ class FeeAssignDTO extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($debitorNo, true), gettype($debitorNo)), __LINE__);
         }
         $this->debitorNo = $debitorNo;
+        
+        return $this;
+    }
+    /**
+     * Get deletedReason value
+     * @return string|null
+     */
+    public function getDeletedReason(): ?string
+    {
+        return $this->deletedReason;
+    }
+    /**
+     * Set deletedReason value
+     * @param string $deletedReason
+     * @return \Pggns\MidocoApi\OrderSD\StructType\FeeAssignDTO
+     */
+    public function setDeletedReason(?string $deletedReason = null): self
+    {
+        // validation for constraint: string
+        if (!is_null($deletedReason) && !is_string($deletedReason)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($deletedReason, true), gettype($deletedReason)), __LINE__);
+        }
+        $this->deletedReason = $deletedReason;
+        
+        return $this;
+    }
+    /**
+     * Get deletedTimestamp value
+     * @return string|null
+     */
+    public function getDeletedTimestamp(): ?string
+    {
+        return $this->deletedTimestamp;
+    }
+    /**
+     * Set deletedTimestamp value
+     * @param string $deletedTimestamp
+     * @return \Pggns\MidocoApi\OrderSD\StructType\FeeAssignDTO
+     */
+    public function setDeletedTimestamp(?string $deletedTimestamp = null): self
+    {
+        // validation for constraint: string
+        if (!is_null($deletedTimestamp) && !is_string($deletedTimestamp)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($deletedTimestamp, true), gettype($deletedTimestamp)), __LINE__);
+        }
+        $this->deletedTimestamp = $deletedTimestamp;
+        
+        return $this;
+    }
+    /**
+     * Get deletedUser value
+     * @return int|null
+     */
+    public function getDeletedUser(): ?int
+    {
+        return $this->deletedUser;
+    }
+    /**
+     * Set deletedUser value
+     * @param int $deletedUser
+     * @return \Pggns\MidocoApi\OrderSD\StructType\FeeAssignDTO
+     */
+    public function setDeletedUser(?int $deletedUser = null): self
+    {
+        // validation for constraint: int
+        if (!is_null($deletedUser) && !(is_int($deletedUser) || ctype_digit($deletedUser))) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($deletedUser, true), gettype($deletedUser)), __LINE__);
+        }
+        $this->deletedUser = $deletedUser;
         
         return $this;
     }
@@ -1387,6 +1550,29 @@ class FeeAssignDTO extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($isAbsoluteFeePercent, true), gettype($isAbsoluteFeePercent)), __LINE__);
         }
         $this->isAbsoluteFeePercent = $isAbsoluteFeePercent;
+        
+        return $this;
+    }
+    /**
+     * Get isDeleted value
+     * @return bool|null
+     */
+    public function getIsDeleted(): ?bool
+    {
+        return $this->isDeleted;
+    }
+    /**
+     * Set isDeleted value
+     * @param bool $isDeleted
+     * @return \Pggns\MidocoApi\OrderSD\StructType\FeeAssignDTO
+     */
+    public function setIsDeleted(?bool $isDeleted = null): self
+    {
+        // validation for constraint: boolean
+        if (!is_null($isDeleted) && !is_bool($isDeleted)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($isDeleted, true), gettype($isDeleted)), __LINE__);
+        }
+        $this->isDeleted = $isDeleted;
         
         return $this;
     }

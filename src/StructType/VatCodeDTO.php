@@ -15,6 +15,11 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 class VatCodeDTO extends AbstractStructBase
 {
     /**
+     * The adjustAmount
+     * @var bool|null
+     */
+    protected ?bool $adjustAmount = null;
+    /**
      * The countryCode
      * @var string|null
      */
@@ -35,6 +40,11 @@ class VatCodeDTO extends AbstractStructBase
      */
     protected ?bool $isInputVat = null;
     /**
+     * The isVisible
+     * @var bool|null
+     */
+    protected ?bool $isVisible = null;
+    /**
      * The percent
      * @var float|null
      */
@@ -44,6 +54,16 @@ class VatCodeDTO extends AbstractStructBase
      * @var float|null
      */
     protected ?float $reverseChargePercent = null;
+    /**
+     * The secondaryPercent
+     * @var float|null
+     */
+    protected ?float $secondaryPercent = null;
+    /**
+     * The secondaryVatCode
+     * @var string|null
+     */
+    protected ?string $secondaryVatCode = null;
     /**
      * The validFrom
      * @var string|null
@@ -66,40 +86,75 @@ class VatCodeDTO extends AbstractStructBase
     protected ?bool $voidInputVat = null;
     /**
      * Constructor method for VatCodeDTO
+     * @uses VatCodeDTO::setAdjustAmount()
      * @uses VatCodeDTO::setCountryCode()
      * @uses VatCodeDTO::setDescription()
      * @uses VatCodeDTO::setFactor()
      * @uses VatCodeDTO::setIsInputVat()
+     * @uses VatCodeDTO::setIsVisible()
      * @uses VatCodeDTO::setPercent()
      * @uses VatCodeDTO::setReverseChargePercent()
+     * @uses VatCodeDTO::setSecondaryPercent()
+     * @uses VatCodeDTO::setSecondaryVatCode()
      * @uses VatCodeDTO::setValidFrom()
      * @uses VatCodeDTO::setValidUntil()
      * @uses VatCodeDTO::setVatCode()
      * @uses VatCodeDTO::setVoidInputVat()
+     * @param bool $adjustAmount
      * @param string $countryCode
      * @param string $description
      * @param float $factor
      * @param bool $isInputVat
+     * @param bool $isVisible
      * @param float $percent
      * @param float $reverseChargePercent
+     * @param float $secondaryPercent
+     * @param string $secondaryVatCode
      * @param string $validFrom
      * @param string $validUntil
      * @param string $vatCode
      * @param bool $voidInputVat
      */
-    public function __construct(?string $countryCode = null, ?string $description = null, ?float $factor = null, ?bool $isInputVat = null, ?float $percent = null, ?float $reverseChargePercent = null, ?string $validFrom = null, ?string $validUntil = null, ?string $vatCode = null, ?bool $voidInputVat = null)
+    public function __construct(?bool $adjustAmount = null, ?string $countryCode = null, ?string $description = null, ?float $factor = null, ?bool $isInputVat = null, ?bool $isVisible = null, ?float $percent = null, ?float $reverseChargePercent = null, ?float $secondaryPercent = null, ?string $secondaryVatCode = null, ?string $validFrom = null, ?string $validUntil = null, ?string $vatCode = null, ?bool $voidInputVat = null)
     {
         $this
+            ->setAdjustAmount($adjustAmount)
             ->setCountryCode($countryCode)
             ->setDescription($description)
             ->setFactor($factor)
             ->setIsInputVat($isInputVat)
+            ->setIsVisible($isVisible)
             ->setPercent($percent)
             ->setReverseChargePercent($reverseChargePercent)
+            ->setSecondaryPercent($secondaryPercent)
+            ->setSecondaryVatCode($secondaryVatCode)
             ->setValidFrom($validFrom)
             ->setValidUntil($validUntil)
             ->setVatCode($vatCode)
             ->setVoidInputVat($voidInputVat);
+    }
+    /**
+     * Get adjustAmount value
+     * @return bool|null
+     */
+    public function getAdjustAmount(): ?bool
+    {
+        return $this->adjustAmount;
+    }
+    /**
+     * Set adjustAmount value
+     * @param bool $adjustAmount
+     * @return \Pggns\MidocoApi\OrderSD\StructType\VatCodeDTO
+     */
+    public function setAdjustAmount(?bool $adjustAmount = null): self
+    {
+        // validation for constraint: boolean
+        if (!is_null($adjustAmount) && !is_bool($adjustAmount)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($adjustAmount, true), gettype($adjustAmount)), __LINE__);
+        }
+        $this->adjustAmount = $adjustAmount;
+        
+        return $this;
     }
     /**
      * Get countryCode value
@@ -194,6 +249,29 @@ class VatCodeDTO extends AbstractStructBase
         return $this;
     }
     /**
+     * Get isVisible value
+     * @return bool|null
+     */
+    public function getIsVisible(): ?bool
+    {
+        return $this->isVisible;
+    }
+    /**
+     * Set isVisible value
+     * @param bool $isVisible
+     * @return \Pggns\MidocoApi\OrderSD\StructType\VatCodeDTO
+     */
+    public function setIsVisible(?bool $isVisible = null): self
+    {
+        // validation for constraint: boolean
+        if (!is_null($isVisible) && !is_bool($isVisible)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($isVisible, true), gettype($isVisible)), __LINE__);
+        }
+        $this->isVisible = $isVisible;
+        
+        return $this;
+    }
+    /**
      * Get percent value
      * @return float|null
      */
@@ -236,6 +314,52 @@ class VatCodeDTO extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($reverseChargePercent, true), gettype($reverseChargePercent)), __LINE__);
         }
         $this->reverseChargePercent = $reverseChargePercent;
+        
+        return $this;
+    }
+    /**
+     * Get secondaryPercent value
+     * @return float|null
+     */
+    public function getSecondaryPercent(): ?float
+    {
+        return $this->secondaryPercent;
+    }
+    /**
+     * Set secondaryPercent value
+     * @param float $secondaryPercent
+     * @return \Pggns\MidocoApi\OrderSD\StructType\VatCodeDTO
+     */
+    public function setSecondaryPercent(?float $secondaryPercent = null): self
+    {
+        // validation for constraint: float
+        if (!is_null($secondaryPercent) && !(is_float($secondaryPercent) || is_numeric($secondaryPercent))) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($secondaryPercent, true), gettype($secondaryPercent)), __LINE__);
+        }
+        $this->secondaryPercent = $secondaryPercent;
+        
+        return $this;
+    }
+    /**
+     * Get secondaryVatCode value
+     * @return string|null
+     */
+    public function getSecondaryVatCode(): ?string
+    {
+        return $this->secondaryVatCode;
+    }
+    /**
+     * Set secondaryVatCode value
+     * @param string $secondaryVatCode
+     * @return \Pggns\MidocoApi\OrderSD\StructType\VatCodeDTO
+     */
+    public function setSecondaryVatCode(?string $secondaryVatCode = null): self
+    {
+        // validation for constraint: string
+        if (!is_null($secondaryVatCode) && !is_string($secondaryVatCode)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($secondaryVatCode, true), gettype($secondaryVatCode)), __LINE__);
+        }
+        $this->secondaryVatCode = $secondaryVatCode;
         
         return $this;
     }

@@ -15,6 +15,11 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 class SupplierAgencyImportFormatDTO extends AbstractStructBase
 {
     /**
+     * The adoptSupplierAsSettlementParty
+     * @var bool|null
+     */
+    protected ?bool $adoptSupplierAsSettlementParty = null;
+    /**
      * The dateFormat
      * @var string|null
      */
@@ -30,6 +35,11 @@ class SupplierAgencyImportFormatDTO extends AbstractStructBase
      */
     protected ?string $format = null;
     /**
+     * The formatName
+     * @var string|null
+     */
+    protected ?string $formatName = null;
+    /**
      * The id
      * @var int|null
      */
@@ -39,6 +49,11 @@ class SupplierAgencyImportFormatDTO extends AbstractStructBase
      * @var string|null
      */
     protected ?string $settlementType = null;
+    /**
+     * The sourceSystem
+     * @var string|null
+     */
+    protected ?string $sourceSystem = null;
     /**
      * The supplierId
      * @var string|null
@@ -56,34 +71,66 @@ class SupplierAgencyImportFormatDTO extends AbstractStructBase
     protected ?bool $textInQuotes = null;
     /**
      * Constructor method for SupplierAgencyImportFormatDTO
+     * @uses SupplierAgencyImportFormatDTO::setAdoptSupplierAsSettlementParty()
      * @uses SupplierAgencyImportFormatDTO::setDateFormat()
      * @uses SupplierAgencyImportFormatDTO::setDecimalDelimiter()
      * @uses SupplierAgencyImportFormatDTO::setFormat()
+     * @uses SupplierAgencyImportFormatDTO::setFormatName()
      * @uses SupplierAgencyImportFormatDTO::setId()
      * @uses SupplierAgencyImportFormatDTO::setSettlementType()
+     * @uses SupplierAgencyImportFormatDTO::setSourceSystem()
      * @uses SupplierAgencyImportFormatDTO::setSupplierId()
      * @uses SupplierAgencyImportFormatDTO::setTextDelimiter()
      * @uses SupplierAgencyImportFormatDTO::setTextInQuotes()
+     * @param bool $adoptSupplierAsSettlementParty
      * @param string $dateFormat
      * @param string $decimalDelimiter
      * @param string $format
+     * @param string $formatName
      * @param int $id
      * @param string $settlementType
+     * @param string $sourceSystem
      * @param string $supplierId
      * @param string $textDelimiter
      * @param bool $textInQuotes
      */
-    public function __construct(?string $dateFormat = null, ?string $decimalDelimiter = null, ?string $format = null, ?int $id = null, ?string $settlementType = null, ?string $supplierId = null, ?string $textDelimiter = null, ?bool $textInQuotes = null)
+    public function __construct(?bool $adoptSupplierAsSettlementParty = null, ?string $dateFormat = null, ?string $decimalDelimiter = null, ?string $format = null, ?string $formatName = null, ?int $id = null, ?string $settlementType = null, ?string $sourceSystem = null, ?string $supplierId = null, ?string $textDelimiter = null, ?bool $textInQuotes = null)
     {
         $this
+            ->setAdoptSupplierAsSettlementParty($adoptSupplierAsSettlementParty)
             ->setDateFormat($dateFormat)
             ->setDecimalDelimiter($decimalDelimiter)
             ->setFormat($format)
+            ->setFormatName($formatName)
             ->setId($id)
             ->setSettlementType($settlementType)
+            ->setSourceSystem($sourceSystem)
             ->setSupplierId($supplierId)
             ->setTextDelimiter($textDelimiter)
             ->setTextInQuotes($textInQuotes);
+    }
+    /**
+     * Get adoptSupplierAsSettlementParty value
+     * @return bool|null
+     */
+    public function getAdoptSupplierAsSettlementParty(): ?bool
+    {
+        return $this->adoptSupplierAsSettlementParty;
+    }
+    /**
+     * Set adoptSupplierAsSettlementParty value
+     * @param bool $adoptSupplierAsSettlementParty
+     * @return \Pggns\MidocoApi\OrderSD\StructType\SupplierAgencyImportFormatDTO
+     */
+    public function setAdoptSupplierAsSettlementParty(?bool $adoptSupplierAsSettlementParty = null): self
+    {
+        // validation for constraint: boolean
+        if (!is_null($adoptSupplierAsSettlementParty) && !is_bool($adoptSupplierAsSettlementParty)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($adoptSupplierAsSettlementParty, true), gettype($adoptSupplierAsSettlementParty)), __LINE__);
+        }
+        $this->adoptSupplierAsSettlementParty = $adoptSupplierAsSettlementParty;
+        
+        return $this;
     }
     /**
      * Get dateFormat value
@@ -155,6 +202,29 @@ class SupplierAgencyImportFormatDTO extends AbstractStructBase
         return $this;
     }
     /**
+     * Get formatName value
+     * @return string|null
+     */
+    public function getFormatName(): ?string
+    {
+        return $this->formatName;
+    }
+    /**
+     * Set formatName value
+     * @param string $formatName
+     * @return \Pggns\MidocoApi\OrderSD\StructType\SupplierAgencyImportFormatDTO
+     */
+    public function setFormatName(?string $formatName = null): self
+    {
+        // validation for constraint: string
+        if (!is_null($formatName) && !is_string($formatName)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($formatName, true), gettype($formatName)), __LINE__);
+        }
+        $this->formatName = $formatName;
+        
+        return $this;
+    }
+    /**
      * Get id value
      * @return int|null
      */
@@ -197,6 +267,29 @@ class SupplierAgencyImportFormatDTO extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($settlementType, true), gettype($settlementType)), __LINE__);
         }
         $this->settlementType = $settlementType;
+        
+        return $this;
+    }
+    /**
+     * Get sourceSystem value
+     * @return string|null
+     */
+    public function getSourceSystem(): ?string
+    {
+        return $this->sourceSystem;
+    }
+    /**
+     * Set sourceSystem value
+     * @param string $sourceSystem
+     * @return \Pggns\MidocoApi\OrderSD\StructType\SupplierAgencyImportFormatDTO
+     */
+    public function setSourceSystem(?string $sourceSystem = null): self
+    {
+        // validation for constraint: string
+        if (!is_null($sourceSystem) && !is_string($sourceSystem)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($sourceSystem, true), gettype($sourceSystem)), __LINE__);
+        }
+        $this->sourceSystem = $sourceSystem;
         
         return $this;
     }

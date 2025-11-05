@@ -2326,6 +2326,33 @@ class Get extends AbstractSoapClientBase
         }
     }
     /**
+     * Method to call the operation originally named getUnitDisabledSuppliers
+     * Meta information extracted from the WSDL
+     * - SOAPHeaderNames: MidocoCredentials
+     * - SOAPHeaderNamespaces: http://www.midoco.de/system
+     * - SOAPHeaderTypes: \Pggns\MidocoApi\OrderSD\StructType\MidocoCredentialsType
+     * - SOAPHeaders: required
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param \Pggns\MidocoApi\OrderSD\StructType\GetUnitDisabledSuppliersRequest $paramGetUnitDisabledSuppliersRequest
+     * @return \Pggns\MidocoApi\OrderSD\StructType\GetUnitDisabledSuppliersResponse|bool
+     */
+    public function getUnitDisabledSuppliers(\Pggns\MidocoApi\OrderSD\StructType\GetUnitDisabledSuppliersRequest $paramGetUnitDisabledSuppliersRequest)
+    {
+        try {
+            $this->setResult($resultGetUnitDisabledSuppliers = $this->getSoapClient()->__soapCall('getUnitDisabledSuppliers', [
+                $paramGetUnitDisabledSuppliersRequest,
+            ], [], [], $this->outputHeaders));
+        
+            return $resultGetUnitDisabledSuppliers;
+        } catch (SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+        
+            return false;
+        }
+    }
+    /**
      * Method to call the operation originally named getSupplierDocuments
      * Meta information extracted from the WSDL
      * - SOAPHeaderNames: MidocoCredentials
@@ -2400,61 +2427,6 @@ class Get extends AbstractSoapClientBase
             ], [], [], $this->outputHeaders));
         
             return $resultGetProductTypeSupplier;
-        } catch (SoapFault $soapFault) {
-            $this->saveLastError(__METHOD__, $soapFault);
-        
-            return false;
-        }
-    }
-    /**
-     * Method to call the operation originally named
-     * getOrdCriteriaTypeCategoryDescriptions
-     * Meta information extracted from the WSDL
-     * - SOAPHeaderNames: MidocoCredentials
-     * - SOAPHeaderNamespaces: http://www.midoco.de/system
-     * - SOAPHeaderTypes: \Pggns\MidocoApi\OrderSD\StructType\MidocoCredentialsType
-     * - SOAPHeaders: required
-     * @uses AbstractSoapClientBase::getSoapClient()
-     * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Pggns\MidocoApi\OrderSD\StructType\GetOrdCriteriaTypeCategoryDescriptionsRequest $paramGetOrdCriteriaTypeCategoryDescriptionsRequest
-     * @return \Pggns\MidocoApi\OrderSD\StructType\GetOrdCriteriaTypeCategoryDescriptionsResponse|bool
-     */
-    public function getOrdCriteriaTypeCategoryDescriptions(\Pggns\MidocoApi\OrderSD\StructType\GetOrdCriteriaTypeCategoryDescriptionsRequest $paramGetOrdCriteriaTypeCategoryDescriptionsRequest)
-    {
-        try {
-            $this->setResult($resultGetOrdCriteriaTypeCategoryDescriptions = $this->getSoapClient()->__soapCall('getOrdCriteriaTypeCategoryDescriptions', [
-                $paramGetOrdCriteriaTypeCategoryDescriptionsRequest,
-            ], [], [], $this->outputHeaders));
-        
-            return $resultGetOrdCriteriaTypeCategoryDescriptions;
-        } catch (SoapFault $soapFault) {
-            $this->saveLastError(__METHOD__, $soapFault);
-        
-            return false;
-        }
-    }
-    /**
-     * Method to call the operation originally named getOrdCriteriaTypesForCategory
-     * Meta information extracted from the WSDL
-     * - SOAPHeaderNames: MidocoCredentials
-     * - SOAPHeaderNamespaces: http://www.midoco.de/system
-     * - SOAPHeaderTypes: \Pggns\MidocoApi\OrderSD\StructType\MidocoCredentialsType
-     * - SOAPHeaders: required
-     * @uses AbstractSoapClientBase::getSoapClient()
-     * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Pggns\MidocoApi\OrderSD\StructType\GetOrdCriteriaTypesForCategoryRequest $paramGetOrdCriteriaTypesForCategoryRequest
-     * @return \Pggns\MidocoApi\OrderSD\StructType\GetOrdCriteriaTypesForCategoryResponse|bool
-     */
-    public function getOrdCriteriaTypesForCategory(\Pggns\MidocoApi\OrderSD\StructType\GetOrdCriteriaTypesForCategoryRequest $paramGetOrdCriteriaTypesForCategoryRequest)
-    {
-        try {
-            $this->setResult($resultGetOrdCriteriaTypesForCategory = $this->getSoapClient()->__soapCall('getOrdCriteriaTypesForCategory', [
-                $paramGetOrdCriteriaTypesForCategoryRequest,
-            ], [], [], $this->outputHeaders));
-        
-            return $resultGetOrdCriteriaTypesForCategory;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
         
@@ -2923,7 +2895,7 @@ class Get extends AbstractSoapClientBase
     /**
      * Returns the result
      * @see AbstractSoapClientBase::getResult()
-     * @return \Pggns\MidocoApi\OrderSD\StructType\GetAccomodationCodesResponse|\Pggns\MidocoApi\OrderSD\StructType\GetAccountsFromAccountAssignResponse|\Pggns\MidocoApi\OrderSD\StructType\GetAllOrdCriteriaDescriptionsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetAreaCodesResponse|\Pggns\MidocoApi\OrderSD\StructType\GetAssignedMidocoRuleSetForOrgunitResponse|\Pggns\MidocoApi\OrderSD\StructType\GetAssignedMidocoRuleSetResponse|\Pggns\MidocoApi\OrderSD\StructType\GetAssignedOrgunitsForRuleResponse|\Pggns\MidocoApi\OrderSD\StructType\GetAssignedSuppCancelCMappingResponse|\Pggns\MidocoApi\OrderSD\StructType\GetAssignedSuppliersToTemplateResponse|\Pggns\MidocoApi\OrderSD\StructType\GetATOLClassificationsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetAutoInvoiceConditionsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetAutoRemarksResponse|\Pggns\MidocoApi\OrderSD\StructType\GetAvailableAccountsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetAvailableMiscPaymentSettingResponse|\Pggns\MidocoApi\OrderSD\StructType\GetAvailableOrderLockReasonDescriptionsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetAvailableOrderLockReasonsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetAvailableQueryCriteriaOpsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetAvailableQueryFieldsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetAvailableSupplierHistoricResponse|\Pggns\MidocoApi\OrderSD\StructType\GetAvailableSupplierIdResponse|\Pggns\MidocoApi\OrderSD\StructType\GetAvailableSupplierNamesResponse|\Pggns\MidocoApi\OrderSD\StructType\GetAvailableSupplierResponse|\Pggns\MidocoApi\OrderSD\StructType\GetBankAccountResponse|\Pggns\MidocoApi\OrderSD\StructType\GetBankAccounts4OrgUnitResponse|\Pggns\MidocoApi\OrderSD\StructType\GetBookingTextsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetCabinClassResponse|\Pggns\MidocoApi\OrderSD\StructType\GetCashBookItemTypeResponse|\Pggns\MidocoApi\OrderSD\StructType\GetCateringCodesResponse|\Pggns\MidocoApi\OrderSD\StructType\GetCostCentresResponse|\Pggns\MidocoApi\OrderSD\StructType\GetCurrencyRateResponse|\Pggns\MidocoApi\OrderSD\StructType\GetDeliveriesForCultureResponse|\Pggns\MidocoApi\OrderSD\StructType\GetDestinationAutoRemarksResponse|\Pggns\MidocoApi\OrderSD\StructType\GetDestinationDocumentsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetDunningLettersResponse|\Pggns\MidocoApi\OrderSD\StructType\GetExternalServiceLinksResponse|\Pggns\MidocoApi\OrderSD\StructType\GetExternVoucherTypeResponse|\Pggns\MidocoApi\OrderSD\StructType\GetFeeGroupAssignsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetFeeGroupsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetFeeTypeForOrgunitResponse|\Pggns\MidocoApi\OrderSD\StructType\GetHedgeCurrencyRateResponse|\Pggns\MidocoApi\OrderSD\StructType\GetMarketingKeyDescriptionsForTypeResponse|\Pggns\MidocoApi\OrderSD\StructType\GetMarketingKeysForTypeResponse|\Pggns\MidocoApi\OrderSD\StructType\GetMarketingKeysLocalizedForTypeResponse|\Pggns\MidocoApi\OrderSD\StructType\GetMatchingProductTypeSupplierResponse|\Pggns\MidocoApi\OrderSD\StructType\GetMidocoBaggageAllowanceResponse|\Pggns\MidocoApi\OrderSD\StructType\GetMidocoCrsSystemResponse|\Pggns\MidocoApi\OrderSD\StructType\GetMidocoFeeTypeResponse|\Pggns\MidocoApi\OrderSD\StructType\GetMidocoPrintOptionResponse|\Pggns\MidocoApi\OrderSD\StructType\GetMidocoQuestionResponse|\Pggns\MidocoApi\OrderSD\StructType\GetMidocoQuestionValueResponse|\Pggns\MidocoApi\OrderSD\StructType\GetMidocoRuleTypesResponse|\Pggns\MidocoApi\OrderSD\StructType\GetMidocoSettlementTypeForSupplierResponse|\Pggns\MidocoApi\OrderSD\StructType\GetMidocoSettlementTypesResponse|\Pggns\MidocoApi\OrderSD\StructType\GetMidocoSupplierCommissionResponse|\Pggns\MidocoApi\OrderSD\StructType\GetMidocoSupplierImportFormatResponse|\Pggns\MidocoApi\OrderSD\StructType\GetMidocoSupplierTemplateResponse|\Pggns\MidocoApi\OrderSD\StructType\GetMidocoSupplierTemplatesResponse|\Pggns\MidocoApi\OrderSD\StructType\GetMidocoTemplatesResponse|\Pggns\MidocoApi\OrderSD\StructType\GetMidocoTemplateTypesResponse|\Pggns\MidocoApi\OrderSD\StructType\GetMidocoTextRemarksResponse|\Pggns\MidocoApi\OrderSD\StructType\GetOrdCriteriaTypeCategoryDescriptionsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetOrdCriteriaTypesForCategoryResponse|\Pggns\MidocoApi\OrderSD\StructType\GetOrderLockReasonDescriptionsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetOrderLockReasonsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetPaymentProviderImportFormatResponse|\Pggns\MidocoApi\OrderSD\StructType\GetPaymentProvidersResponse|\Pggns\MidocoApi\OrderSD\StructType\GetProductTypeMediatorConditionsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetProductTypeSupplierResponse|\Pggns\MidocoApi\OrderSD\StructType\GetQueryCriteriaOpNamesResponse|\Pggns\MidocoApi\OrderSD\StructType\GetQueryFieldValuesResponse|\Pggns\MidocoApi\OrderSD\StructType\GetQueryPageResponse|\Pggns\MidocoApi\OrderSD\StructType\GetRemarkOrgunitsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetRemarks4OrgunitResponse|\Pggns\MidocoApi\OrderSD\StructType\GetRemarkSuppliersResponse|\Pggns\MidocoApi\OrderSD\StructType\GetRuleSetsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetShortRemarkIdentifiersResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSpecifiedSupplierPaymentConditionResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSpecifiedSupplierSettlementDiffResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSuppCancelCEmailResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSuppCancelCMappingResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierAccountAssignResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierAddressListResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierAddressResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierAgenciesResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierAgencyResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierByAccountResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierCancelConditionResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierCcCardResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierCommissionByLevelIdResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierCommissionConditionResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierDisabledUnitsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierDocumentShippingResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierDocumentsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierInkassoModesResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierMappingResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierNoticesResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierPaymentConditionResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierSettlementAccountsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierSettlPaymentConditionResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierShipNamesResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierTraveltypesResponse|\Pggns\MidocoApi\OrderSD\StructType\GetTravelNumberAutoRemarksResponse|\Pggns\MidocoApi\OrderSD\StructType\GetTravelNumberDocumentsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetTravelNumberResponse|\Pggns\MidocoApi\OrderSD\StructType\GetUserQueryResponse|\Pggns\MidocoApi\OrderSD\StructType\GetVoucherTypeResponse
+     * @return \Pggns\MidocoApi\OrderSD\StructType\GetAccomodationCodesResponse|\Pggns\MidocoApi\OrderSD\StructType\GetAccountsFromAccountAssignResponse|\Pggns\MidocoApi\OrderSD\StructType\GetAllOrdCriteriaDescriptionsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetAreaCodesResponse|\Pggns\MidocoApi\OrderSD\StructType\GetAssignedMidocoRuleSetForOrgunitResponse|\Pggns\MidocoApi\OrderSD\StructType\GetAssignedMidocoRuleSetResponse|\Pggns\MidocoApi\OrderSD\StructType\GetAssignedOrgunitsForRuleResponse|\Pggns\MidocoApi\OrderSD\StructType\GetAssignedSuppCancelCMappingResponse|\Pggns\MidocoApi\OrderSD\StructType\GetAssignedSuppliersToTemplateResponse|\Pggns\MidocoApi\OrderSD\StructType\GetATOLClassificationsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetAutoInvoiceConditionsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetAutoRemarksResponse|\Pggns\MidocoApi\OrderSD\StructType\GetAvailableAccountsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetAvailableMiscPaymentSettingResponse|\Pggns\MidocoApi\OrderSD\StructType\GetAvailableOrderLockReasonDescriptionsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetAvailableOrderLockReasonsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetAvailableQueryCriteriaOpsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetAvailableQueryFieldsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetAvailableSupplierHistoricResponse|\Pggns\MidocoApi\OrderSD\StructType\GetAvailableSupplierIdResponse|\Pggns\MidocoApi\OrderSD\StructType\GetAvailableSupplierNamesResponse|\Pggns\MidocoApi\OrderSD\StructType\GetAvailableSupplierResponse|\Pggns\MidocoApi\OrderSD\StructType\GetBankAccountResponse|\Pggns\MidocoApi\OrderSD\StructType\GetBankAccounts4OrgUnitResponse|\Pggns\MidocoApi\OrderSD\StructType\GetBookingTextsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetCabinClassResponse|\Pggns\MidocoApi\OrderSD\StructType\GetCashBookItemTypeResponse|\Pggns\MidocoApi\OrderSD\StructType\GetCateringCodesResponse|\Pggns\MidocoApi\OrderSD\StructType\GetCostCentresResponse|\Pggns\MidocoApi\OrderSD\StructType\GetCurrencyRateResponse|\Pggns\MidocoApi\OrderSD\StructType\GetDeliveriesForCultureResponse|\Pggns\MidocoApi\OrderSD\StructType\GetDestinationAutoRemarksResponse|\Pggns\MidocoApi\OrderSD\StructType\GetDestinationDocumentsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetDunningLettersResponse|\Pggns\MidocoApi\OrderSD\StructType\GetExternalServiceLinksResponse|\Pggns\MidocoApi\OrderSD\StructType\GetExternVoucherTypeResponse|\Pggns\MidocoApi\OrderSD\StructType\GetFeeGroupAssignsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetFeeGroupsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetFeeTypeForOrgunitResponse|\Pggns\MidocoApi\OrderSD\StructType\GetHedgeCurrencyRateResponse|\Pggns\MidocoApi\OrderSD\StructType\GetMarketingKeyDescriptionsForTypeResponse|\Pggns\MidocoApi\OrderSD\StructType\GetMarketingKeysForTypeResponse|\Pggns\MidocoApi\OrderSD\StructType\GetMarketingKeysLocalizedForTypeResponse|\Pggns\MidocoApi\OrderSD\StructType\GetMatchingProductTypeSupplierResponse|\Pggns\MidocoApi\OrderSD\StructType\GetMidocoBaggageAllowanceResponse|\Pggns\MidocoApi\OrderSD\StructType\GetMidocoCrsSystemResponse|\Pggns\MidocoApi\OrderSD\StructType\GetMidocoFeeTypeResponse|\Pggns\MidocoApi\OrderSD\StructType\GetMidocoPrintOptionResponse|\Pggns\MidocoApi\OrderSD\StructType\GetMidocoQuestionResponse|\Pggns\MidocoApi\OrderSD\StructType\GetMidocoQuestionValueResponse|\Pggns\MidocoApi\OrderSD\StructType\GetMidocoRuleTypesResponse|\Pggns\MidocoApi\OrderSD\StructType\GetMidocoSettlementTypeForSupplierResponse|\Pggns\MidocoApi\OrderSD\StructType\GetMidocoSettlementTypesResponse|\Pggns\MidocoApi\OrderSD\StructType\GetMidocoSupplierCommissionResponse|\Pggns\MidocoApi\OrderSD\StructType\GetMidocoSupplierImportFormatResponse|\Pggns\MidocoApi\OrderSD\StructType\GetMidocoSupplierTemplateResponse|\Pggns\MidocoApi\OrderSD\StructType\GetMidocoSupplierTemplatesResponse|\Pggns\MidocoApi\OrderSD\StructType\GetMidocoTemplatesResponse|\Pggns\MidocoApi\OrderSD\StructType\GetMidocoTemplateTypesResponse|\Pggns\MidocoApi\OrderSD\StructType\GetMidocoTextRemarksResponse|\Pggns\MidocoApi\OrderSD\StructType\GetOrderLockReasonDescriptionsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetOrderLockReasonsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetPaymentProviderImportFormatResponse|\Pggns\MidocoApi\OrderSD\StructType\GetPaymentProvidersResponse|\Pggns\MidocoApi\OrderSD\StructType\GetProductTypeMediatorConditionsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetProductTypeSupplierResponse|\Pggns\MidocoApi\OrderSD\StructType\GetQueryCriteriaOpNamesResponse|\Pggns\MidocoApi\OrderSD\StructType\GetQueryFieldValuesResponse|\Pggns\MidocoApi\OrderSD\StructType\GetQueryPageResponse|\Pggns\MidocoApi\OrderSD\StructType\GetRemarkOrgunitsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetRemarks4OrgunitResponse|\Pggns\MidocoApi\OrderSD\StructType\GetRemarkSuppliersResponse|\Pggns\MidocoApi\OrderSD\StructType\GetRuleSetsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetShortRemarkIdentifiersResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSpecifiedSupplierPaymentConditionResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSpecifiedSupplierSettlementDiffResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSuppCancelCEmailResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSuppCancelCMappingResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierAccountAssignResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierAddressListResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierAddressResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierAgenciesResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierAgencyResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierByAccountResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierCancelConditionResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierCcCardResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierCommissionByLevelIdResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierCommissionConditionResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierDisabledUnitsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierDocumentShippingResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierDocumentsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierInkassoModesResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierMappingResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierNoticesResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierPaymentConditionResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierSettlementAccountsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierSettlPaymentConditionResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierShipNamesResponse|\Pggns\MidocoApi\OrderSD\StructType\GetSupplierTraveltypesResponse|\Pggns\MidocoApi\OrderSD\StructType\GetTravelNumberAutoRemarksResponse|\Pggns\MidocoApi\OrderSD\StructType\GetTravelNumberDocumentsResponse|\Pggns\MidocoApi\OrderSD\StructType\GetTravelNumberResponse|\Pggns\MidocoApi\OrderSD\StructType\GetUnitDisabledSuppliersResponse|\Pggns\MidocoApi\OrderSD\StructType\GetUserQueryResponse|\Pggns\MidocoApi\OrderSD\StructType\GetVoucherTypeResponse
      */
     public function getResult()
     {

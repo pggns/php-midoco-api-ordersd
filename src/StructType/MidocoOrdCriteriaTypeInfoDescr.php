@@ -15,13 +15,6 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 class MidocoOrdCriteriaTypeInfoDescr extends AbstractStructBase
 {
     /**
-     * The categoryId
-     * Meta information extracted from the WSDL
-     * - use: required
-     * @var int
-     */
-    protected int $categoryId;
-    /**
      * The typeId
      * Meta information extracted from the WSDL
      * - use: required
@@ -42,45 +35,19 @@ class MidocoOrdCriteriaTypeInfoDescr extends AbstractStructBase
     protected ?string $description = null;
     /**
      * Constructor method for MidocoOrdCriteriaTypeInfoDescr
-     * @uses MidocoOrdCriteriaTypeInfoDescr::setCategoryId()
      * @uses MidocoOrdCriteriaTypeInfoDescr::setTypeId()
      * @uses MidocoOrdCriteriaTypeInfoDescr::setGuiPosition()
      * @uses MidocoOrdCriteriaTypeInfoDescr::setDescription()
-     * @param int $categoryId
      * @param string $typeId
      * @param int $guiPosition
      * @param string $description
      */
-    public function __construct(int $categoryId, string $typeId, int $guiPosition, ?string $description = null)
+    public function __construct(string $typeId, int $guiPosition, ?string $description = null)
     {
         $this
-            ->setCategoryId($categoryId)
             ->setTypeId($typeId)
             ->setGuiPosition($guiPosition)
             ->setDescription($description);
-    }
-    /**
-     * Get categoryId value
-     * @return int
-     */
-    public function getCategoryId(): int
-    {
-        return $this->categoryId;
-    }
-    /**
-     * Set categoryId value
-     * @param int $categoryId
-     * @return \Pggns\MidocoApi\OrderSD\StructType\MidocoOrdCriteriaTypeInfoDescr
-     */
-    public function setCategoryId(int $categoryId): self
-    {
-        // validation for constraint: int
-        if (!is_null($categoryId) && !(is_int($categoryId) || ctype_digit($categoryId))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($categoryId, true), gettype($categoryId)), __LINE__);
-        }
-        $this->categoryId = $categoryId;
-        
-        return $this;
     }
     /**
      * Get typeId value

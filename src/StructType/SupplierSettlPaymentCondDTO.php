@@ -15,30 +15,15 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 class SupplierSettlPaymentCondDTO extends AbstractStructBase
 {
     /**
-     * The depositDays
-     * @var int|null
-     */
-    protected ?int $depositDays = null;
-    /**
-     * The depositMinAmount
-     * @var float|null
-     */
-    protected ?float $depositMinAmount = null;
-    /**
-     * The depositPercent
-     * @var float|null
-     */
-    protected ?float $depositPercent = null;
-    /**
      * The finalPaymentDays
      * @var int|null
      */
     protected ?int $finalPaymentDays = null;
     /**
-     * The maxDepositAmount
-     * @var float|null
+     * The immediatePayment
+     * @var bool|null
      */
-    protected ?float $maxDepositAmount = null;
+    protected ?bool $immediatePayment = null;
     /**
      * The settlementType
      * @var string|null
@@ -61,106 +46,28 @@ class SupplierSettlPaymentCondDTO extends AbstractStructBase
     protected ?string $validFrom = null;
     /**
      * Constructor method for SupplierSettlPaymentCondDTO
-     * @uses SupplierSettlPaymentCondDTO::setDepositDays()
-     * @uses SupplierSettlPaymentCondDTO::setDepositMinAmount()
-     * @uses SupplierSettlPaymentCondDTO::setDepositPercent()
      * @uses SupplierSettlPaymentCondDTO::setFinalPaymentDays()
-     * @uses SupplierSettlPaymentCondDTO::setMaxDepositAmount()
+     * @uses SupplierSettlPaymentCondDTO::setImmediatePayment()
      * @uses SupplierSettlPaymentCondDTO::setSettlementType()
      * @uses SupplierSettlPaymentCondDTO::setSupplierId()
      * @uses SupplierSettlPaymentCondDTO::setTraveltype()
      * @uses SupplierSettlPaymentCondDTO::setValidFrom()
-     * @param int $depositDays
-     * @param float $depositMinAmount
-     * @param float $depositPercent
      * @param int $finalPaymentDays
-     * @param float $maxDepositAmount
+     * @param bool $immediatePayment
      * @param string $settlementType
      * @param string $supplierId
      * @param string $traveltype
      * @param string $validFrom
      */
-    public function __construct(?int $depositDays = null, ?float $depositMinAmount = null, ?float $depositPercent = null, ?int $finalPaymentDays = null, ?float $maxDepositAmount = null, ?string $settlementType = null, ?string $supplierId = null, ?string $traveltype = null, ?string $validFrom = null)
+    public function __construct(?int $finalPaymentDays = null, ?bool $immediatePayment = null, ?string $settlementType = null, ?string $supplierId = null, ?string $traveltype = null, ?string $validFrom = null)
     {
         $this
-            ->setDepositDays($depositDays)
-            ->setDepositMinAmount($depositMinAmount)
-            ->setDepositPercent($depositPercent)
             ->setFinalPaymentDays($finalPaymentDays)
-            ->setMaxDepositAmount($maxDepositAmount)
+            ->setImmediatePayment($immediatePayment)
             ->setSettlementType($settlementType)
             ->setSupplierId($supplierId)
             ->setTraveltype($traveltype)
             ->setValidFrom($validFrom);
-    }
-    /**
-     * Get depositDays value
-     * @return int|null
-     */
-    public function getDepositDays(): ?int
-    {
-        return $this->depositDays;
-    }
-    /**
-     * Set depositDays value
-     * @param int $depositDays
-     * @return \Pggns\MidocoApi\OrderSD\StructType\SupplierSettlPaymentCondDTO
-     */
-    public function setDepositDays(?int $depositDays = null): self
-    {
-        // validation for constraint: int
-        if (!is_null($depositDays) && !(is_int($depositDays) || ctype_digit($depositDays))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($depositDays, true), gettype($depositDays)), __LINE__);
-        }
-        $this->depositDays = $depositDays;
-        
-        return $this;
-    }
-    /**
-     * Get depositMinAmount value
-     * @return float|null
-     */
-    public function getDepositMinAmount(): ?float
-    {
-        return $this->depositMinAmount;
-    }
-    /**
-     * Set depositMinAmount value
-     * @param float $depositMinAmount
-     * @return \Pggns\MidocoApi\OrderSD\StructType\SupplierSettlPaymentCondDTO
-     */
-    public function setDepositMinAmount(?float $depositMinAmount = null): self
-    {
-        // validation for constraint: float
-        if (!is_null($depositMinAmount) && !(is_float($depositMinAmount) || is_numeric($depositMinAmount))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($depositMinAmount, true), gettype($depositMinAmount)), __LINE__);
-        }
-        $this->depositMinAmount = $depositMinAmount;
-        
-        return $this;
-    }
-    /**
-     * Get depositPercent value
-     * @return float|null
-     */
-    public function getDepositPercent(): ?float
-    {
-        return $this->depositPercent;
-    }
-    /**
-     * Set depositPercent value
-     * @param float $depositPercent
-     * @return \Pggns\MidocoApi\OrderSD\StructType\SupplierSettlPaymentCondDTO
-     */
-    public function setDepositPercent(?float $depositPercent = null): self
-    {
-        // validation for constraint: float
-        if (!is_null($depositPercent) && !(is_float($depositPercent) || is_numeric($depositPercent))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($depositPercent, true), gettype($depositPercent)), __LINE__);
-        }
-        $this->depositPercent = $depositPercent;
-        
-        return $this;
     }
     /**
      * Get finalPaymentDays value
@@ -186,25 +93,25 @@ class SupplierSettlPaymentCondDTO extends AbstractStructBase
         return $this;
     }
     /**
-     * Get maxDepositAmount value
-     * @return float|null
+     * Get immediatePayment value
+     * @return bool|null
      */
-    public function getMaxDepositAmount(): ?float
+    public function getImmediatePayment(): ?bool
     {
-        return $this->maxDepositAmount;
+        return $this->immediatePayment;
     }
     /**
-     * Set maxDepositAmount value
-     * @param float $maxDepositAmount
+     * Set immediatePayment value
+     * @param bool $immediatePayment
      * @return \Pggns\MidocoApi\OrderSD\StructType\SupplierSettlPaymentCondDTO
      */
-    public function setMaxDepositAmount(?float $maxDepositAmount = null): self
+    public function setImmediatePayment(?bool $immediatePayment = null): self
     {
-        // validation for constraint: float
-        if (!is_null($maxDepositAmount) && !(is_float($maxDepositAmount) || is_numeric($maxDepositAmount))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($maxDepositAmount, true), gettype($maxDepositAmount)), __LINE__);
+        // validation for constraint: boolean
+        if (!is_null($immediatePayment) && !is_bool($immediatePayment)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($immediatePayment, true), gettype($immediatePayment)), __LINE__);
         }
-        $this->maxDepositAmount = $maxDepositAmount;
+        $this->immediatePayment = $immediatePayment;
         
         return $this;
     }

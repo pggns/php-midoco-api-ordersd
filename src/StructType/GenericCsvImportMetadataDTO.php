@@ -30,6 +30,11 @@ class GenericCsvImportMetadataDTO extends AbstractStructBase
      */
     protected ?string $format = null;
     /**
+     * The formatName
+     * @var string|null
+     */
+    protected ?string $formatName = null;
+    /**
      * The id
      * @var int|null
      */
@@ -54,6 +59,7 @@ class GenericCsvImportMetadataDTO extends AbstractStructBase
      * @uses GenericCsvImportMetadataDTO::setDateFormat()
      * @uses GenericCsvImportMetadataDTO::setDecimalDelimiter()
      * @uses GenericCsvImportMetadataDTO::setFormat()
+     * @uses GenericCsvImportMetadataDTO::setFormatName()
      * @uses GenericCsvImportMetadataDTO::setId()
      * @uses GenericCsvImportMetadataDTO::setTextDelimiter()
      * @uses GenericCsvImportMetadataDTO::setTextInQuotes()
@@ -61,17 +67,19 @@ class GenericCsvImportMetadataDTO extends AbstractStructBase
      * @param string $dateFormat
      * @param string $decimalDelimiter
      * @param string $format
+     * @param string $formatName
      * @param int $id
      * @param string $textDelimiter
      * @param bool $textInQuotes
      * @param string $unitName
      */
-    public function __construct(?string $dateFormat = null, ?string $decimalDelimiter = null, ?string $format = null, ?int $id = null, ?string $textDelimiter = null, ?bool $textInQuotes = null, ?string $unitName = null)
+    public function __construct(?string $dateFormat = null, ?string $decimalDelimiter = null, ?string $format = null, ?string $formatName = null, ?int $id = null, ?string $textDelimiter = null, ?bool $textInQuotes = null, ?string $unitName = null)
     {
         $this
             ->setDateFormat($dateFormat)
             ->setDecimalDelimiter($decimalDelimiter)
             ->setFormat($format)
+            ->setFormatName($formatName)
             ->setId($id)
             ->setTextDelimiter($textDelimiter)
             ->setTextInQuotes($textInQuotes)
@@ -143,6 +151,29 @@ class GenericCsvImportMetadataDTO extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($format, true), gettype($format)), __LINE__);
         }
         $this->format = $format;
+        
+        return $this;
+    }
+    /**
+     * Get formatName value
+     * @return string|null
+     */
+    public function getFormatName(): ?string
+    {
+        return $this->formatName;
+    }
+    /**
+     * Set formatName value
+     * @param string $formatName
+     * @return \Pggns\MidocoApi\OrderSD\StructType\GenericCsvImportMetadataDTO
+     */
+    public function setFormatName(?string $formatName = null): self
+    {
+        // validation for constraint: string
+        if (!is_null($formatName) && !is_string($formatName)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($formatName, true), gettype($formatName)), __LINE__);
+        }
+        $this->formatName = $formatName;
         
         return $this;
     }

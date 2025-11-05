@@ -90,6 +90,21 @@ class BankAccountDTO extends AbstractStructBase
      */
     protected ?string $iban = null;
     /**
+     * The institutionNo
+     * @var string|null
+     */
+    protected ?string $institutionNo = null;
+    /**
+     * The intermediateAccountChequeCredit
+     * @var string|null
+     */
+    protected ?string $intermediateAccountChequeCredit = null;
+    /**
+     * The intermediateAccountChequeDebit
+     * @var string|null
+     */
+    protected ?string $intermediateAccountChequeDebit = null;
+    /**
      * The intermediateAccountCredit
      * @var string|null
      */
@@ -150,6 +165,11 @@ class BankAccountDTO extends AbstractStructBase
      */
     protected ?string $qrInvoiceParticipantId = null;
     /**
+     * The state
+     * @var string|null
+     */
+    protected ?string $state = null;
+    /**
      * The street
      * @var string|null
      */
@@ -186,6 +206,9 @@ class BankAccountDTO extends AbstractStructBase
      * @uses BankAccountDTO::setDepartment()
      * @uses BankAccountDTO::setFirmCode()
      * @uses BankAccountDTO::setIban()
+     * @uses BankAccountDTO::setInstitutionNo()
+     * @uses BankAccountDTO::setIntermediateAccountChequeCredit()
+     * @uses BankAccountDTO::setIntermediateAccountChequeDebit()
      * @uses BankAccountDTO::setIntermediateAccountCredit()
      * @uses BankAccountDTO::setIntermediateAccountDebit()
      * @uses BankAccountDTO::setNationalBankKey()
@@ -198,6 +221,7 @@ class BankAccountDTO extends AbstractStructBase
      * @uses BankAccountDTO::setQrIban()
      * @uses BankAccountDTO::setQrInvoiceBankParticipantId()
      * @uses BankAccountDTO::setQrInvoiceParticipantId()
+     * @uses BankAccountDTO::setState()
      * @uses BankAccountDTO::setStreet()
      * @uses BankAccountDTO::setSwiftBicCode()
      * @uses BankAccountDTO::setUnitName()
@@ -217,6 +241,9 @@ class BankAccountDTO extends AbstractStructBase
      * @param string $department
      * @param string $firmCode
      * @param string $iban
+     * @param string $institutionNo
+     * @param string $intermediateAccountChequeCredit
+     * @param string $intermediateAccountChequeDebit
      * @param string $intermediateAccountCredit
      * @param string $intermediateAccountDebit
      * @param string $nationalBankKey
@@ -229,12 +256,13 @@ class BankAccountDTO extends AbstractStructBase
      * @param string $qrIban
      * @param string $qrInvoiceBankParticipantId
      * @param string $qrInvoiceParticipantId
+     * @param string $state
      * @param string $street
      * @param string $swiftBicCode
      * @param string $unitName
      * @param bool $use4QrInvoice
      */
-    public function __construct(?string $accountId = null, ?string $accountOwner = null, ?string $bankAccountNo = null, ?string $bankCountry = null, ?string $bankDescription = null, ?string $bankName = null, ?string $bankNo = null, ?string $city = null, ?string $contactPerson = null, ?string $currency = null, ?string $customerNo = null, ?string $debteeId = null, ?string $department = null, ?string $firmCode = null, ?string $iban = null, ?string $intermediateAccountCredit = null, ?string $intermediateAccountDebit = null, ?string $nationalBankKey = null, ?bool $nationalBankNotification = null, ?string $paymentScheme = null, ?string $phone = null, ?string $planId = null, ?string $postalCode = null, ?bool $processStatements = null, ?string $qrIban = null, ?string $qrInvoiceBankParticipantId = null, ?string $qrInvoiceParticipantId = null, ?string $street = null, ?string $swiftBicCode = null, ?string $unitName = null, ?bool $use4QrInvoice = null)
+    public function __construct(?string $accountId = null, ?string $accountOwner = null, ?string $bankAccountNo = null, ?string $bankCountry = null, ?string $bankDescription = null, ?string $bankName = null, ?string $bankNo = null, ?string $city = null, ?string $contactPerson = null, ?string $currency = null, ?string $customerNo = null, ?string $debteeId = null, ?string $department = null, ?string $firmCode = null, ?string $iban = null, ?string $institutionNo = null, ?string $intermediateAccountChequeCredit = null, ?string $intermediateAccountChequeDebit = null, ?string $intermediateAccountCredit = null, ?string $intermediateAccountDebit = null, ?string $nationalBankKey = null, ?bool $nationalBankNotification = null, ?string $paymentScheme = null, ?string $phone = null, ?string $planId = null, ?string $postalCode = null, ?bool $processStatements = null, ?string $qrIban = null, ?string $qrInvoiceBankParticipantId = null, ?string $qrInvoiceParticipantId = null, ?string $state = null, ?string $street = null, ?string $swiftBicCode = null, ?string $unitName = null, ?bool $use4QrInvoice = null)
     {
         $this
             ->setAccountId($accountId)
@@ -252,6 +280,9 @@ class BankAccountDTO extends AbstractStructBase
             ->setDepartment($department)
             ->setFirmCode($firmCode)
             ->setIban($iban)
+            ->setInstitutionNo($institutionNo)
+            ->setIntermediateAccountChequeCredit($intermediateAccountChequeCredit)
+            ->setIntermediateAccountChequeDebit($intermediateAccountChequeDebit)
             ->setIntermediateAccountCredit($intermediateAccountCredit)
             ->setIntermediateAccountDebit($intermediateAccountDebit)
             ->setNationalBankKey($nationalBankKey)
@@ -264,6 +295,7 @@ class BankAccountDTO extends AbstractStructBase
             ->setQrIban($qrIban)
             ->setQrInvoiceBankParticipantId($qrInvoiceBankParticipantId)
             ->setQrInvoiceParticipantId($qrInvoiceParticipantId)
+            ->setState($state)
             ->setStreet($street)
             ->setSwiftBicCode($swiftBicCode)
             ->setUnitName($unitName)
@@ -615,6 +647,75 @@ class BankAccountDTO extends AbstractStructBase
         return $this;
     }
     /**
+     * Get institutionNo value
+     * @return string|null
+     */
+    public function getInstitutionNo(): ?string
+    {
+        return $this->institutionNo;
+    }
+    /**
+     * Set institutionNo value
+     * @param string $institutionNo
+     * @return \Pggns\MidocoApi\OrderSD\StructType\BankAccountDTO
+     */
+    public function setInstitutionNo(?string $institutionNo = null): self
+    {
+        // validation for constraint: string
+        if (!is_null($institutionNo) && !is_string($institutionNo)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($institutionNo, true), gettype($institutionNo)), __LINE__);
+        }
+        $this->institutionNo = $institutionNo;
+        
+        return $this;
+    }
+    /**
+     * Get intermediateAccountChequeCredit value
+     * @return string|null
+     */
+    public function getIntermediateAccountChequeCredit(): ?string
+    {
+        return $this->intermediateAccountChequeCredit;
+    }
+    /**
+     * Set intermediateAccountChequeCredit value
+     * @param string $intermediateAccountChequeCredit
+     * @return \Pggns\MidocoApi\OrderSD\StructType\BankAccountDTO
+     */
+    public function setIntermediateAccountChequeCredit(?string $intermediateAccountChequeCredit = null): self
+    {
+        // validation for constraint: string
+        if (!is_null($intermediateAccountChequeCredit) && !is_string($intermediateAccountChequeCredit)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($intermediateAccountChequeCredit, true), gettype($intermediateAccountChequeCredit)), __LINE__);
+        }
+        $this->intermediateAccountChequeCredit = $intermediateAccountChequeCredit;
+        
+        return $this;
+    }
+    /**
+     * Get intermediateAccountChequeDebit value
+     * @return string|null
+     */
+    public function getIntermediateAccountChequeDebit(): ?string
+    {
+        return $this->intermediateAccountChequeDebit;
+    }
+    /**
+     * Set intermediateAccountChequeDebit value
+     * @param string $intermediateAccountChequeDebit
+     * @return \Pggns\MidocoApi\OrderSD\StructType\BankAccountDTO
+     */
+    public function setIntermediateAccountChequeDebit(?string $intermediateAccountChequeDebit = null): self
+    {
+        // validation for constraint: string
+        if (!is_null($intermediateAccountChequeDebit) && !is_string($intermediateAccountChequeDebit)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($intermediateAccountChequeDebit, true), gettype($intermediateAccountChequeDebit)), __LINE__);
+        }
+        $this->intermediateAccountChequeDebit = $intermediateAccountChequeDebit;
+        
+        return $this;
+    }
+    /**
      * Get intermediateAccountCredit value
      * @return string|null
      */
@@ -887,6 +988,29 @@ class BankAccountDTO extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($qrInvoiceParticipantId, true), gettype($qrInvoiceParticipantId)), __LINE__);
         }
         $this->qrInvoiceParticipantId = $qrInvoiceParticipantId;
+        
+        return $this;
+    }
+    /**
+     * Get state value
+     * @return string|null
+     */
+    public function getState(): ?string
+    {
+        return $this->state;
+    }
+    /**
+     * Set state value
+     * @param string $state
+     * @return \Pggns\MidocoApi\OrderSD\StructType\BankAccountDTO
+     */
+    public function setState(?string $state = null): self
+    {
+        // validation for constraint: string
+        if (!is_null($state) && !is_string($state)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($state, true), gettype($state)), __LINE__);
+        }
+        $this->state = $state;
         
         return $this;
     }

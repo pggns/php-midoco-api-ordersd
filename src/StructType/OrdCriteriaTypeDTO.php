@@ -15,11 +15,6 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 class OrdCriteriaTypeDTO extends AbstractStructBase
 {
     /**
-     * The categoryId
-     * @var int|null
-     */
-    protected ?int $categoryId = null;
-    /**
      * The editValue
      * @var bool|null
      */
@@ -30,15 +25,15 @@ class OrdCriteriaTypeDTO extends AbstractStructBase
      */
     protected ?bool $forceUpshift = null;
     /**
-     * The guiCategoryPosition
-     * @var int|null
-     */
-    protected ?int $guiCategoryPosition = null;
-    /**
      * The isPasswordType
      * @var bool|null
      */
     protected ?bool $isPasswordType = null;
+    /**
+     * The predefinedValues
+     * @var bool|null
+     */
+    protected ?bool $predefinedValues = null;
     /**
      * The required
      * @var bool|null
@@ -61,60 +56,34 @@ class OrdCriteriaTypeDTO extends AbstractStructBase
     protected ?bool $valueTakeover = null;
     /**
      * Constructor method for OrdCriteriaTypeDTO
-     * @uses OrdCriteriaTypeDTO::setCategoryId()
      * @uses OrdCriteriaTypeDTO::setEditValue()
      * @uses OrdCriteriaTypeDTO::setForceUpshift()
-     * @uses OrdCriteriaTypeDTO::setGuiCategoryPosition()
      * @uses OrdCriteriaTypeDTO::setIsPasswordType()
+     * @uses OrdCriteriaTypeDTO::setPredefinedValues()
      * @uses OrdCriteriaTypeDTO::setRequired()
      * @uses OrdCriteriaTypeDTO::setRequiresUpdateRight()
      * @uses OrdCriteriaTypeDTO::setTypeId()
      * @uses OrdCriteriaTypeDTO::setValueTakeover()
-     * @param int $categoryId
      * @param bool $editValue
      * @param bool $forceUpshift
-     * @param int $guiCategoryPosition
      * @param bool $isPasswordType
+     * @param bool $predefinedValues
      * @param bool $required
      * @param bool $requiresUpdateRight
      * @param string $typeId
      * @param bool $valueTakeover
      */
-    public function __construct(?int $categoryId = null, ?bool $editValue = null, ?bool $forceUpshift = null, ?int $guiCategoryPosition = null, ?bool $isPasswordType = null, ?bool $required = null, ?bool $requiresUpdateRight = null, ?string $typeId = null, ?bool $valueTakeover = null)
+    public function __construct(?bool $editValue = null, ?bool $forceUpshift = null, ?bool $isPasswordType = null, ?bool $predefinedValues = null, ?bool $required = null, ?bool $requiresUpdateRight = null, ?string $typeId = null, ?bool $valueTakeover = null)
     {
         $this
-            ->setCategoryId($categoryId)
             ->setEditValue($editValue)
             ->setForceUpshift($forceUpshift)
-            ->setGuiCategoryPosition($guiCategoryPosition)
             ->setIsPasswordType($isPasswordType)
+            ->setPredefinedValues($predefinedValues)
             ->setRequired($required)
             ->setRequiresUpdateRight($requiresUpdateRight)
             ->setTypeId($typeId)
             ->setValueTakeover($valueTakeover);
-    }
-    /**
-     * Get categoryId value
-     * @return int|null
-     */
-    public function getCategoryId(): ?int
-    {
-        return $this->categoryId;
-    }
-    /**
-     * Set categoryId value
-     * @param int $categoryId
-     * @return \Pggns\MidocoApi\OrderSD\StructType\OrdCriteriaTypeDTO
-     */
-    public function setCategoryId(?int $categoryId = null): self
-    {
-        // validation for constraint: int
-        if (!is_null($categoryId) && !(is_int($categoryId) || ctype_digit($categoryId))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($categoryId, true), gettype($categoryId)), __LINE__);
-        }
-        $this->categoryId = $categoryId;
-        
-        return $this;
     }
     /**
      * Get editValue value
@@ -163,29 +132,6 @@ class OrdCriteriaTypeDTO extends AbstractStructBase
         return $this;
     }
     /**
-     * Get guiCategoryPosition value
-     * @return int|null
-     */
-    public function getGuiCategoryPosition(): ?int
-    {
-        return $this->guiCategoryPosition;
-    }
-    /**
-     * Set guiCategoryPosition value
-     * @param int $guiCategoryPosition
-     * @return \Pggns\MidocoApi\OrderSD\StructType\OrdCriteriaTypeDTO
-     */
-    public function setGuiCategoryPosition(?int $guiCategoryPosition = null): self
-    {
-        // validation for constraint: int
-        if (!is_null($guiCategoryPosition) && !(is_int($guiCategoryPosition) || ctype_digit($guiCategoryPosition))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($guiCategoryPosition, true), gettype($guiCategoryPosition)), __LINE__);
-        }
-        $this->guiCategoryPosition = $guiCategoryPosition;
-        
-        return $this;
-    }
-    /**
      * Get isPasswordType value
      * @return bool|null
      */
@@ -205,6 +151,29 @@ class OrdCriteriaTypeDTO extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($isPasswordType, true), gettype($isPasswordType)), __LINE__);
         }
         $this->isPasswordType = $isPasswordType;
+        
+        return $this;
+    }
+    /**
+     * Get predefinedValues value
+     * @return bool|null
+     */
+    public function getPredefinedValues(): ?bool
+    {
+        return $this->predefinedValues;
+    }
+    /**
+     * Set predefinedValues value
+     * @param bool $predefinedValues
+     * @return \Pggns\MidocoApi\OrderSD\StructType\OrdCriteriaTypeDTO
+     */
+    public function setPredefinedValues(?bool $predefinedValues = null): self
+    {
+        // validation for constraint: boolean
+        if (!is_null($predefinedValues) && !is_bool($predefinedValues)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($predefinedValues, true), gettype($predefinedValues)), __LINE__);
+        }
+        $this->predefinedValues = $predefinedValues;
         
         return $this;
     }

@@ -8,10 +8,10 @@ use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
- * This class stands for DeleteOrdCriteriaTypeCategoryResponse StructType
+ * This class stands for GetAvailableAccountingSuppliersRequest StructType
  * @subpackage Structs
  */
 #[\AllowDynamicProperties]
-class DeleteOrdCriteriaTypeCategoryResponse extends AbstractStructBase
+class GetAvailableAccountingSuppliersRequest extends AbstractStructBase
 {
 }

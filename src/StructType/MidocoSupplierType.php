@@ -72,6 +72,11 @@ class MidocoSupplierType extends SupplierDTO
      */
     protected ?string $searchCode = null;
     /**
+     * The linkedCompanyCustomerId
+     * @var int|null
+     */
+    protected ?int $linkedCompanyCustomerId = null;
+    /**
      * Constructor method for MidocoSupplierType
      * @uses MidocoSupplierType::setIsInheritance()
      * @uses MidocoSupplierType::setOrgunit()
@@ -84,6 +89,7 @@ class MidocoSupplierType extends SupplierDTO
      * @uses MidocoSupplierType::setAccountRevenueOwnService()
      * @uses MidocoSupplierType::setCity()
      * @uses MidocoSupplierType::setSearchCode()
+     * @uses MidocoSupplierType::setLinkedCompanyCustomerId()
      * @param bool $isInheritance
      * @param string $orgunit
      * @param string $inkassoModeDescription
@@ -95,8 +101,9 @@ class MidocoSupplierType extends SupplierDTO
      * @param string $accountRevenueOwnService
      * @param string $city
      * @param string $searchCode
+     * @param int $linkedCompanyCustomerId
      */
-    public function __construct(?bool $isInheritance = null, ?string $orgunit = null, ?string $inkassoModeDescription = null, ?string $language = null, ?string $defaultProductType = null, ?bool $isHistorical = null, ?int $creationUser = null, ?string $creationDate = null, ?string $accountRevenueOwnService = null, ?string $city = '', ?string $searchCode = null)
+    public function __construct(?bool $isInheritance = null, ?string $orgunit = null, ?string $inkassoModeDescription = null, ?string $language = null, ?string $defaultProductType = null, ?bool $isHistorical = null, ?int $creationUser = null, ?string $creationDate = null, ?string $accountRevenueOwnService = null, ?string $city = '', ?string $searchCode = null, ?int $linkedCompanyCustomerId = null)
     {
         $this
             ->setIsInheritance($isInheritance)
@@ -109,7 +116,8 @@ class MidocoSupplierType extends SupplierDTO
             ->setCreationDate($creationDate)
             ->setAccountRevenueOwnService($accountRevenueOwnService)
             ->setCity($city)
-            ->setSearchCode($searchCode);
+            ->setSearchCode($searchCode)
+            ->setLinkedCompanyCustomerId($linkedCompanyCustomerId);
     }
     /**
      * Get isInheritance value
@@ -361,6 +369,29 @@ class MidocoSupplierType extends SupplierDTO
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($searchCode, true), gettype($searchCode)), __LINE__);
         }
         $this->searchCode = $searchCode;
+        
+        return $this;
+    }
+    /**
+     * Get linkedCompanyCustomerId value
+     * @return int|null
+     */
+    public function getLinkedCompanyCustomerId(): ?int
+    {
+        return $this->linkedCompanyCustomerId;
+    }
+    /**
+     * Set linkedCompanyCustomerId value
+     * @param int $linkedCompanyCustomerId
+     * @return \Pggns\MidocoApi\OrderSD\StructType\MidocoSupplierType
+     */
+    public function setLinkedCompanyCustomerId(?int $linkedCompanyCustomerId = null): self
+    {
+        // validation for constraint: int
+        if (!is_null($linkedCompanyCustomerId) && !(is_int($linkedCompanyCustomerId) || ctype_digit($linkedCompanyCustomerId))) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($linkedCompanyCustomerId, true), gettype($linkedCompanyCustomerId)), __LINE__);
+        }
+        $this->linkedCompanyCustomerId = $linkedCompanyCustomerId;
         
         return $this;
     }

@@ -8,11 +8,10 @@ use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
- * This class stands for DeleteOrdCriteriaTypeCategoryDescriptionResponse
- * StructType
+ * This class stands for PopulateChangeLogInitiallyResponse StructType
  * @subpackage Structs
  */
 #[\AllowDynamicProperties]
-class DeleteOrdCriteriaTypeCategoryDescriptionResponse extends AbstractStructBase
+class PopulateChangeLogInitiallyResponse extends AbstractStructBase
 {
 }

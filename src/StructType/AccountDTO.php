@@ -110,6 +110,11 @@ class AccountDTO extends AbstractStructBase
      */
     protected ?string $planId = null;
     /**
+     * The preventExport
+     * @var bool|null
+     */
+    protected ?bool $preventExport = null;
+    /**
      * The preventObBooking
      * @var bool|null
      */
@@ -165,6 +170,7 @@ class AccountDTO extends AbstractStructBase
      * @uses AccountDTO::setLockDate()
      * @uses AccountDTO::setName()
      * @uses AccountDTO::setPlanId()
+     * @uses AccountDTO::setPreventExport()
      * @uses AccountDTO::setPreventObBooking()
      * @uses AccountDTO::setSummaryAccount()
      * @uses AccountDTO::setUseAsCashAccount()
@@ -191,6 +197,7 @@ class AccountDTO extends AbstractStructBase
      * @param string $lockDate
      * @param string $name
      * @param string $planId
+     * @param bool $preventExport
      * @param bool $preventObBooking
      * @param string $summaryAccount
      * @param bool $useAsCashAccount
@@ -199,7 +206,7 @@ class AccountDTO extends AbstractStructBase
      * @param bool $useInItReceipt
      * @param string $vatCode
      */
-    public function __construct(?string $accountId = null, ?string $accountType = null, ?string $accrualAccount = null, ?bool $applyForeignCurrencyToExport = null, ?bool $automaticVat = null, ?string $balanceSheetPosition = null, ?string $clearingAccount = null, ?string $currency = null, ?int $currencyLookupMethod = null, ?string $depositAccount = null, ?bool $isCommissionAccount = null, ?bool $isLocked = null, ?bool $isManualUsage = null, ?bool $isPaymentAccount = null, ?bool $isProtectedAccount = null, ?string $lastUsedDate = null, ?string $lockDate = null, ?string $name = null, ?string $planId = null, ?bool $preventObBooking = null, ?string $summaryAccount = null, ?bool $useAsCashAccount = null, ?bool $useAsReverseChargeAccount = null, ?bool $useCostCentre = null, ?bool $useInItReceipt = null, ?string $vatCode = null)
+    public function __construct(?string $accountId = null, ?string $accountType = null, ?string $accrualAccount = null, ?bool $applyForeignCurrencyToExport = null, ?bool $automaticVat = null, ?string $balanceSheetPosition = null, ?string $clearingAccount = null, ?string $currency = null, ?int $currencyLookupMethod = null, ?string $depositAccount = null, ?bool $isCommissionAccount = null, ?bool $isLocked = null, ?bool $isManualUsage = null, ?bool $isPaymentAccount = null, ?bool $isProtectedAccount = null, ?string $lastUsedDate = null, ?string $lockDate = null, ?string $name = null, ?string $planId = null, ?bool $preventExport = null, ?bool $preventObBooking = null, ?string $summaryAccount = null, ?bool $useAsCashAccount = null, ?bool $useAsReverseChargeAccount = null, ?bool $useCostCentre = null, ?bool $useInItReceipt = null, ?string $vatCode = null)
     {
         $this
             ->setAccountId($accountId)
@@ -221,6 +228,7 @@ class AccountDTO extends AbstractStructBase
             ->setLockDate($lockDate)
             ->setName($name)
             ->setPlanId($planId)
+            ->setPreventExport($preventExport)
             ->setPreventObBooking($preventObBooking)
             ->setSummaryAccount($summaryAccount)
             ->setUseAsCashAccount($useAsCashAccount)
@@ -663,6 +671,29 @@ class AccountDTO extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($planId, true), gettype($planId)), __LINE__);
         }
         $this->planId = $planId;
+        
+        return $this;
+    }
+    /**
+     * Get preventExport value
+     * @return bool|null
+     */
+    public function getPreventExport(): ?bool
+    {
+        return $this->preventExport;
+    }
+    /**
+     * Set preventExport value
+     * @param bool $preventExport
+     * @return \Pggns\MidocoApi\OrderSD\StructType\AccountDTO
+     */
+    public function setPreventExport(?bool $preventExport = null): self
+    {
+        // validation for constraint: boolean
+        if (!is_null($preventExport) && !is_bool($preventExport)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($preventExport, true), gettype($preventExport)), __LINE__);
+        }
+        $this->preventExport = $preventExport;
         
         return $this;
     }

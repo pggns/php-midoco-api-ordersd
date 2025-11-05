@@ -28,11 +28,6 @@ class GetOrdTypeValuesAndDescriptionsDTO extends AbstractStructBase
      */
     protected ?string $key = null;
     /**
-     * The categoryId
-     * @var int|null
-     */
-    protected ?int $categoryId = null;
-    /**
      * The defaultValue
      * @var string|null
      */
@@ -41,19 +36,16 @@ class GetOrdTypeValuesAndDescriptionsDTO extends AbstractStructBase
      * Constructor method for GetOrdTypeValuesAndDescriptionsDTO
      * @uses GetOrdTypeValuesAndDescriptionsDTO::setValue()
      * @uses GetOrdTypeValuesAndDescriptionsDTO::setKey()
-     * @uses GetOrdTypeValuesAndDescriptionsDTO::setCategoryId()
      * @uses GetOrdTypeValuesAndDescriptionsDTO::setDefaultValue()
      * @param string[] $value
      * @param string $key
-     * @param int $categoryId
      * @param string $defaultValue
      */
-    public function __construct(?array $value = null, ?string $key = null, ?int $categoryId = null, ?string $defaultValue = null)
+    public function __construct(?array $value = null, ?string $key = null, ?string $defaultValue = null)
     {
         $this
             ->setValue($value)
             ->setKey($key)
-            ->setCategoryId($categoryId)
             ->setDefaultValue($defaultValue);
     }
     /**
@@ -143,29 +135,6 @@ class GetOrdTypeValuesAndDescriptionsDTO extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
         }
         $this->key = $key;
-        
-        return $this;
-    }
-    /**
-     * Get categoryId value
-     * @return int|null
-     */
-    public function getCategoryId(): ?int
-    {
-        return $this->categoryId;
-    }
-    /**
-     * Set categoryId value
-     * @param int $categoryId
-     * @return \Pggns\MidocoApi\OrderSD\StructType\GetOrdTypeValuesAndDescriptionsDTO
-     */
-    public function setCategoryId(?int $categoryId = null): self
-    {
-        // validation for constraint: int
-        if (!is_null($categoryId) && !(is_int($categoryId) || ctype_digit($categoryId))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($categoryId, true), gettype($categoryId)), __LINE__);
-        }
-        $this->categoryId = $categoryId;
         
         return $this;
     }

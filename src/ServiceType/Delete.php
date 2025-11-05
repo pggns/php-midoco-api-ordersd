@@ -1080,6 +1080,33 @@ class Delete extends AbstractSoapClientBase
         }
     }
     /**
+     * Method to call the operation originally named deleteMidocoSupplierImportFormat
+     * Meta information extracted from the WSDL
+     * - SOAPHeaderNames: MidocoCredentials
+     * - SOAPHeaderNamespaces: http://www.midoco.de/system
+     * - SOAPHeaderTypes: \Pggns\MidocoApi\OrderSD\StructType\MidocoCredentialsType
+     * - SOAPHeaders: required
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param \Pggns\MidocoApi\OrderSD\StructType\DeleteMidocoSupplierImportFormatRequest $paramDeleteMidocoSupplierImportFormatRequest
+     * @return \Pggns\MidocoApi\OrderSD\StructType\DeleteMidocoSupplierImportFormatResponse|bool
+     */
+    public function deleteMidocoSupplierImportFormat(\Pggns\MidocoApi\OrderSD\StructType\DeleteMidocoSupplierImportFormatRequest $paramDeleteMidocoSupplierImportFormatRequest)
+    {
+        try {
+            $this->setResult($resultDeleteMidocoSupplierImportFormat = $this->getSoapClient()->__soapCall('deleteMidocoSupplierImportFormat', [
+                $paramDeleteMidocoSupplierImportFormatRequest,
+            ], [], [], $this->outputHeaders));
+        
+            return $resultDeleteMidocoSupplierImportFormat;
+        } catch (SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+        
+            return false;
+        }
+    }
+    /**
      * Method to call the operation originally named deleteMidocoSettlementType
      * Meta information extracted from the WSDL
      * - SOAPHeaderNames: MidocoCredentials
@@ -1566,61 +1593,6 @@ class Delete extends AbstractSoapClientBase
         }
     }
     /**
-     * Method to call the operation originally named
-     * deleteOrdCriteriaTypeCategoryDescription
-     * Meta information extracted from the WSDL
-     * - SOAPHeaderNames: MidocoCredentials
-     * - SOAPHeaderNamespaces: http://www.midoco.de/system
-     * - SOAPHeaderTypes: \Pggns\MidocoApi\OrderSD\StructType\MidocoCredentialsType
-     * - SOAPHeaders: required
-     * @uses AbstractSoapClientBase::getSoapClient()
-     * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Pggns\MidocoApi\OrderSD\StructType\DeleteOrdCriteriaTypeCategoryDescriptionRequest $paramDeleteOrdCriteriaTypeCategoryDescriptionRequest
-     * @return \Pggns\MidocoApi\OrderSD\StructType\DeleteOrdCriteriaTypeCategoryDescriptionResponse|bool
-     */
-    public function deleteOrdCriteriaTypeCategoryDescription(\Pggns\MidocoApi\OrderSD\StructType\DeleteOrdCriteriaTypeCategoryDescriptionRequest $paramDeleteOrdCriteriaTypeCategoryDescriptionRequest)
-    {
-        try {
-            $this->setResult($resultDeleteOrdCriteriaTypeCategoryDescription = $this->getSoapClient()->__soapCall('deleteOrdCriteriaTypeCategoryDescription', [
-                $paramDeleteOrdCriteriaTypeCategoryDescriptionRequest,
-            ], [], [], $this->outputHeaders));
-        
-            return $resultDeleteOrdCriteriaTypeCategoryDescription;
-        } catch (SoapFault $soapFault) {
-            $this->saveLastError(__METHOD__, $soapFault);
-        
-            return false;
-        }
-    }
-    /**
-     * Method to call the operation originally named deleteOrdCriteriaTypeCategory
-     * Meta information extracted from the WSDL
-     * - SOAPHeaderNames: MidocoCredentials
-     * - SOAPHeaderNamespaces: http://www.midoco.de/system
-     * - SOAPHeaderTypes: \Pggns\MidocoApi\OrderSD\StructType\MidocoCredentialsType
-     * - SOAPHeaders: required
-     * @uses AbstractSoapClientBase::getSoapClient()
-     * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Pggns\MidocoApi\OrderSD\StructType\DeleteOrdCriteriaTypeCategoryRequest $paramDeleteOrdCriteriaTypeCategoryRequest
-     * @return \Pggns\MidocoApi\OrderSD\StructType\DeleteOrdCriteriaTypeCategoryResponse|bool
-     */
-    public function deleteOrdCriteriaTypeCategory(\Pggns\MidocoApi\OrderSD\StructType\DeleteOrdCriteriaTypeCategoryRequest $paramDeleteOrdCriteriaTypeCategoryRequest)
-    {
-        try {
-            $this->setResult($resultDeleteOrdCriteriaTypeCategory = $this->getSoapClient()->__soapCall('deleteOrdCriteriaTypeCategory', [
-                $paramDeleteOrdCriteriaTypeCategoryRequest,
-            ], [], [], $this->outputHeaders));
-        
-            return $resultDeleteOrdCriteriaTypeCategory;
-        } catch (SoapFault $soapFault) {
-            $this->saveLastError(__METHOD__, $soapFault);
-        
-            return false;
-        }
-    }
-    /**
      * Method to call the operation originally named deleteProductTypeSupplier
      * Meta information extracted from the WSDL
      * - SOAPHeaderNames: MidocoCredentials
@@ -1867,7 +1839,7 @@ class Delete extends AbstractSoapClientBase
     /**
      * Returns the result
      * @see AbstractSoapClientBase::getResult()
-     * @return \Pggns\MidocoApi\OrderSD\StructType\DeleteAccomodationCodeResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteAccountResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteAreaCodeResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteAutoRemarkResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteBankAccountResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteBookingTextResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteCabinClassResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteCashBookItemTypeResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteCateringCodeResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteCostCentreResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteCurrencyRateResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteDestinationAutoRemarkResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteDestinationDocumentResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteDunningLetterResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteExternVoucherTypeResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteFeeGroupAssignResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteFeeGroupResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteFeeTypeForOrgunitResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteHedgeCurrencyRateResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteMarketingKeyDescriptionResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteMarketingKeyResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteMediatorConditionResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteMediatorTypeResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteMidocoCrsSystemResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteMidocoFeeTypeLocalResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteMidocoFeeTypeResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteMidocoQuestionResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteMidocoQuestionValueResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteMidocoRuleSetResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteMidocoSettlementTypeResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteMidocoSupplierCommissionResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteMidocoSupplierTemplateResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteMidocoTemplateResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteMidocoTemplateTypeResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteMidocoTextRemarksResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteMiscPaymentSettingResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteOrdCriteriaTypeCategoryDescriptionResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteOrdCriteriaTypeCategoryResponse|\Pggns\MidocoApi\OrderSD\StructType\DeletePaymentProviderResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteProductTypeMediatorConditionResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteProductTypeSupplierResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteRemarkOrgunitResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteRemarkSupplierResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteSettlementChargeResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteSuppCancelCEmailResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteSuppCancelCMappingResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteSupplierAccountAssignResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteSupplierAddressResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteSupplierAgencyResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteSupplierCancelConditionResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteSupplierCcCardResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteSupplierCommissionConditionResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteSupplierDisabledUnitsResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteSupplierDocumentResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteSupplierDocumentShippingResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteSupplierNoticeResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteSupplierPaymentConditionResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteSupplierResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteSupplierSettlementAccountResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteSupplierSettlementDiffResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteSupplierSettlPaymentConditionResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteSupplierShipNameResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteSupplierTraveltypeResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteTravelNumberAutoRemarkResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteTravelNumberDocumentResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteTravelNumberResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteUserQueryResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteVoucherTypeResponse
+     * @return \Pggns\MidocoApi\OrderSD\StructType\DeleteAccomodationCodeResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteAccountResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteAreaCodeResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteAutoRemarkResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteBankAccountResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteBookingTextResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteCabinClassResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteCashBookItemTypeResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteCateringCodeResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteCostCentreResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteCurrencyRateResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteDestinationAutoRemarkResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteDestinationDocumentResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteDunningLetterResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteExternVoucherTypeResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteFeeGroupAssignResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteFeeGroupResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteFeeTypeForOrgunitResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteHedgeCurrencyRateResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteMarketingKeyDescriptionResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteMarketingKeyResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteMediatorConditionResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteMediatorTypeResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteMidocoCrsSystemResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteMidocoFeeTypeLocalResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteMidocoFeeTypeResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteMidocoQuestionResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteMidocoQuestionValueResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteMidocoRuleSetResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteMidocoSettlementTypeResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteMidocoSupplierCommissionResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteMidocoSupplierImportFormatResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteMidocoSupplierTemplateResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteMidocoTemplateResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteMidocoTemplateTypeResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteMidocoTextRemarksResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteMiscPaymentSettingResponse|\Pggns\MidocoApi\OrderSD\StructType\DeletePaymentProviderResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteProductTypeMediatorConditionResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteProductTypeSupplierResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteRemarkOrgunitResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteRemarkSupplierResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteSettlementChargeResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteSuppCancelCEmailResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteSuppCancelCMappingResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteSupplierAccountAssignResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteSupplierAddressResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteSupplierAgencyResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteSupplierCancelConditionResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteSupplierCcCardResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteSupplierCommissionConditionResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteSupplierDisabledUnitsResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteSupplierDocumentResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteSupplierDocumentShippingResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteSupplierNoticeResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteSupplierPaymentConditionResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteSupplierResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteSupplierSettlementAccountResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteSupplierSettlementDiffResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteSupplierSettlPaymentConditionResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteSupplierShipNameResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteSupplierTraveltypeResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteTravelNumberAutoRemarkResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteTravelNumberDocumentResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteTravelNumberResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteUserQueryResponse|\Pggns\MidocoApi\OrderSD\StructType\DeleteVoucherTypeResponse
      */
     public function getResult()
     {

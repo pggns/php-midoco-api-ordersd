@@ -117,6 +117,16 @@ class MidocoFeeTypeAssign extends FeeTypeDTO
      */
     protected ?bool $attribMatched = null;
     /**
+     * The vatCode
+     * @var string|null
+     */
+    protected ?string $vatCode = null;
+    /**
+     * The netValue
+     * @var float|null
+     */
+    protected ?float $netValue = null;
+    /**
      * Constructor method for MidocoFeeTypeAssign
      * @uses MidocoFeeTypeAssign::setIsUseCustomerCurrency()
      * @uses MidocoFeeTypeAssign::setIsExplicit()
@@ -138,6 +148,8 @@ class MidocoFeeTypeAssign extends FeeTypeDTO
      * @uses MidocoFeeTypeAssign::setFeePriority()
      * @uses MidocoFeeTypeAssign::setStatusMatched()
      * @uses MidocoFeeTypeAssign::setAttribMatched()
+     * @uses MidocoFeeTypeAssign::setVatCode()
+     * @uses MidocoFeeTypeAssign::setNetValue()
      * @param bool $isUseCustomerCurrency
      * @param bool $isExplicit
      * @param bool $segmentMultiply
@@ -158,8 +170,10 @@ class MidocoFeeTypeAssign extends FeeTypeDTO
      * @param int $feePriority
      * @param bool $statusMatched
      * @param bool $attribMatched
+     * @param string $vatCode
+     * @param float $netValue
      */
-    public function __construct(?bool $isUseCustomerCurrency = false, ?bool $isExplicit = null, ?bool $segmentMultiply = null, ?bool $travellerMultiply = null, ?string $feeCategory = null, ?bool $assumeTicketTaxPercent = null, ?bool $dbUsePerMatch = null, ?bool $reverseTrip = null, ?string $ticketDesignator = null, ?bool $isNettoFeeValue = null, ?int $segmentValueSet = null, ?bool $noFeeSameDay = null, ?string $noFeeSameDayCategory = null, ?bool $noFeePrevDay = null, ?string $noFeePrevDayCategory = null, ?int $feeAssignId = null, ?bool $oneFeeRelatedTicketsImport = null, ?int $feePriority = null, ?bool $statusMatched = null, ?bool $attribMatched = null)
+    public function __construct(?bool $isUseCustomerCurrency = false, ?bool $isExplicit = null, ?bool $segmentMultiply = null, ?bool $travellerMultiply = null, ?string $feeCategory = null, ?bool $assumeTicketTaxPercent = null, ?bool $dbUsePerMatch = null, ?bool $reverseTrip = null, ?string $ticketDesignator = null, ?bool $isNettoFeeValue = null, ?int $segmentValueSet = null, ?bool $noFeeSameDay = null, ?string $noFeeSameDayCategory = null, ?bool $noFeePrevDay = null, ?string $noFeePrevDayCategory = null, ?int $feeAssignId = null, ?bool $oneFeeRelatedTicketsImport = null, ?int $feePriority = null, ?bool $statusMatched = null, ?bool $attribMatched = null, ?string $vatCode = null, ?float $netValue = null)
     {
         $this
             ->setIsUseCustomerCurrency($isUseCustomerCurrency)
@@ -181,7 +195,9 @@ class MidocoFeeTypeAssign extends FeeTypeDTO
             ->setOneFeeRelatedTicketsImport($oneFeeRelatedTicketsImport)
             ->setFeePriority($feePriority)
             ->setStatusMatched($statusMatched)
-            ->setAttribMatched($attribMatched);
+            ->setAttribMatched($attribMatched)
+            ->setVatCode($vatCode)
+            ->setNetValue($netValue);
     }
     /**
      * Get isUseCustomerCurrency value
@@ -640,6 +656,52 @@ class MidocoFeeTypeAssign extends FeeTypeDTO
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($attribMatched, true), gettype($attribMatched)), __LINE__);
         }
         $this->attribMatched = $attribMatched;
+        
+        return $this;
+    }
+    /**
+     * Get vatCode value
+     * @return string|null
+     */
+    public function getVatCode(): ?string
+    {
+        return $this->vatCode;
+    }
+    /**
+     * Set vatCode value
+     * @param string $vatCode
+     * @return \Pggns\MidocoApi\OrderSD\StructType\MidocoFeeTypeAssign
+     */
+    public function setVatCode(?string $vatCode = null): self
+    {
+        // validation for constraint: string
+        if (!is_null($vatCode) && !is_string($vatCode)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($vatCode, true), gettype($vatCode)), __LINE__);
+        }
+        $this->vatCode = $vatCode;
+        
+        return $this;
+    }
+    /**
+     * Get netValue value
+     * @return float|null
+     */
+    public function getNetValue(): ?float
+    {
+        return $this->netValue;
+    }
+    /**
+     * Set netValue value
+     * @param float $netValue
+     * @return \Pggns\MidocoApi\OrderSD\StructType\MidocoFeeTypeAssign
+     */
+    public function setNetValue(?float $netValue = null): self
+    {
+        // validation for constraint: float
+        if (!is_null($netValue) && !(is_float($netValue) || is_numeric($netValue))) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($netValue, true), gettype($netValue)), __LINE__);
+        }
+        $this->netValue = $netValue;
         
         return $this;
     }

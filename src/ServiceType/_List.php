@@ -324,33 +324,6 @@ class _List extends AbstractSoapClientBase
         }
     }
     /**
-     * Method to call the operation originally named listOrdCriteriaTypeCategories
-     * Meta information extracted from the WSDL
-     * - SOAPHeaderNames: MidocoCredentials
-     * - SOAPHeaderNamespaces: http://www.midoco.de/system
-     * - SOAPHeaderTypes: \Pggns\MidocoApi\OrderSD\StructType\MidocoCredentialsType
-     * - SOAPHeaders: required
-     * @uses AbstractSoapClientBase::getSoapClient()
-     * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Pggns\MidocoApi\OrderSD\StructType\ListOrdCriteriaTypeCategoriesRequest $paramListOrdCriteriaTypeCategoriesRequest
-     * @return \Pggns\MidocoApi\OrderSD\StructType\ListOrdCriteriaTypeCategoriesResponse|bool
-     */
-    public function listOrdCriteriaTypeCategories(\Pggns\MidocoApi\OrderSD\StructType\ListOrdCriteriaTypeCategoriesRequest $paramListOrdCriteriaTypeCategoriesRequest)
-    {
-        try {
-            $this->setResult($resultListOrdCriteriaTypeCategories = $this->getSoapClient()->__soapCall('listOrdCriteriaTypeCategories', [
-                $paramListOrdCriteriaTypeCategoriesRequest,
-            ], [], [], $this->outputHeaders));
-        
-            return $resultListOrdCriteriaTypeCategories;
-        } catch (SoapFault $soapFault) {
-            $this->saveLastError(__METHOD__, $soapFault);
-        
-            return false;
-        }
-    }
-    /**
      * Method to call the operation originally named listSupplierCommissionConditions
      * Meta information extracted from the WSDL
      * - SOAPHeaderNames: MidocoCredentials
@@ -407,7 +380,7 @@ class _List extends AbstractSoapClientBase
     /**
      * Returns the result
      * @see AbstractSoapClientBase::getResult()
-     * @return \Pggns\MidocoApi\OrderSD\StructType\ListAssignedMidocoFeeTypesResponse|\Pggns\MidocoApi\OrderSD\StructType\ListCabinClassResponse|\Pggns\MidocoApi\OrderSD\StructType\ListCashBookItemTypesResponse|\Pggns\MidocoApi\OrderSD\StructType\ListMidocoFeeTypesLocalResponse|\Pggns\MidocoApi\OrderSD\StructType\ListMidocoFeeTypesResponse|\Pggns\MidocoApi\OrderSD\StructType\ListMidocoQuestionResponse|\Pggns\MidocoApi\OrderSD\StructType\ListMidocoQuestionValueResponse|\Pggns\MidocoApi\OrderSD\StructType\ListOrdCriteriaTypeCategoriesResponse|\Pggns\MidocoApi\OrderSD\StructType\ListSettlementChargesForOrgUnitResponse|\Pggns\MidocoApi\OrderSD\StructType\ListSettlementChargesResponse|\Pggns\MidocoApi\OrderSD\StructType\ListSuppCancelCEmailResponse|\Pggns\MidocoApi\OrderSD\StructType\ListSuppCancelCMappingResponse|\Pggns\MidocoApi\OrderSD\StructType\ListSupplierCommissionConditionsResponse|\Pggns\MidocoApi\OrderSD\StructType\ListUserQueriesResponse
+     * @return \Pggns\MidocoApi\OrderSD\StructType\ListAssignedMidocoFeeTypesResponse|\Pggns\MidocoApi\OrderSD\StructType\ListCabinClassResponse|\Pggns\MidocoApi\OrderSD\StructType\ListCashBookItemTypesResponse|\Pggns\MidocoApi\OrderSD\StructType\ListMidocoFeeTypesLocalResponse|\Pggns\MidocoApi\OrderSD\StructType\ListMidocoFeeTypesResponse|\Pggns\MidocoApi\OrderSD\StructType\ListMidocoQuestionResponse|\Pggns\MidocoApi\OrderSD\StructType\ListMidocoQuestionValueResponse|\Pggns\MidocoApi\OrderSD\StructType\ListSettlementChargesForOrgUnitResponse|\Pggns\MidocoApi\OrderSD\StructType\ListSettlementChargesResponse|\Pggns\MidocoApi\OrderSD\StructType\ListSuppCancelCEmailResponse|\Pggns\MidocoApi\OrderSD\StructType\ListSuppCancelCMappingResponse|\Pggns\MidocoApi\OrderSD\StructType\ListSupplierCommissionConditionsResponse|\Pggns\MidocoApi\OrderSD\StructType\ListUserQueriesResponse
      */
     public function getResult()
     {

@@ -9,6 +9,8 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for ListOrdCriteriaValuesRequest StructType
+ * Meta information extracted from the WSDL
+ * - documentation: when false, do not load the ord_criteria_predef_vals.defined_value but use the ord_criteria_value.value
  * @subpackage Structs
  */
 #[\AllowDynamicProperties]
@@ -22,6 +24,13 @@ class ListOrdCriteriaValuesRequest extends AbstractStructBase
      */
     protected string $cultureId;
     /**
+     * The usePredefinedValue
+     * Meta information extracted from the WSDL
+     * - default: true
+     * @var bool|null
+     */
+    protected ?bool $usePredefinedValue = null;
+    /**
      * The typeId
      * @var string|null
      */
@@ -34,16 +43,19 @@ class ListOrdCriteriaValuesRequest extends AbstractStructBase
     /**
      * Constructor method for ListOrdCriteriaValuesRequest
      * @uses ListOrdCriteriaValuesRequest::setCultureId()
+     * @uses ListOrdCriteriaValuesRequest::setUsePredefinedValue()
      * @uses ListOrdCriteriaValuesRequest::setTypeId()
      * @uses ListOrdCriteriaValuesRequest::setSupplierId()
      * @param string $cultureId
+     * @param bool $usePredefinedValue
      * @param string $typeId
      * @param string $supplierId
      */
-    public function __construct(string $cultureId, ?string $typeId = null, ?string $supplierId = null)
+    public function __construct(string $cultureId, ?bool $usePredefinedValue = true, ?string $typeId = null, ?string $supplierId = null)
     {
         $this
             ->setCultureId($cultureId)
+            ->setUsePredefinedValue($usePredefinedValue)
             ->setTypeId($typeId)
             ->setSupplierId($supplierId);
     }
@@ -67,6 +79,29 @@ class ListOrdCriteriaValuesRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cultureId, true), gettype($cultureId)), __LINE__);
         }
         $this->cultureId = $cultureId;
+        
+        return $this;
+    }
+    /**
+     * Get usePredefinedValue value
+     * @return bool|null
+     */
+    public function getUsePredefinedValue(): ?bool
+    {
+        return $this->usePredefinedValue;
+    }
+    /**
+     * Set usePredefinedValue value
+     * @param bool $usePredefinedValue
+     * @return \Pggns\MidocoApi\OrderSD\StructType\ListOrdCriteriaValuesRequest
+     */
+    public function setUsePredefinedValue(?bool $usePredefinedValue = true): self
+    {
+        // validation for constraint: boolean
+        if (!is_null($usePredefinedValue) && !is_bool($usePredefinedValue)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($usePredefinedValue, true), gettype($usePredefinedValue)), __LINE__);
+        }
+        $this->usePredefinedValue = $usePredefinedValue;
         
         return $this;
     }

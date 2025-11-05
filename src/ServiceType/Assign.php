@@ -81,36 +81,9 @@ class Assign extends AbstractSoapClientBase
         }
     }
     /**
-     * Method to call the operation originally named assignOrdCriteriaTypesToCategory
-     * Meta information extracted from the WSDL
-     * - SOAPHeaderNames: MidocoCredentials
-     * - SOAPHeaderNamespaces: http://www.midoco.de/system
-     * - SOAPHeaderTypes: \Pggns\MidocoApi\OrderSD\StructType\MidocoCredentialsType
-     * - SOAPHeaders: required
-     * @uses AbstractSoapClientBase::getSoapClient()
-     * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Pggns\MidocoApi\OrderSD\StructType\AssignOrdCriteriaTypesToCategoryRequest $paramAssignOrdCriteriaTypesToCategoryRequest
-     * @return \Pggns\MidocoApi\OrderSD\StructType\AssignOrdCriteriaTypesToCategoryResponse|bool
-     */
-    public function assignOrdCriteriaTypesToCategory(\Pggns\MidocoApi\OrderSD\StructType\AssignOrdCriteriaTypesToCategoryRequest $paramAssignOrdCriteriaTypesToCategoryRequest)
-    {
-        try {
-            $this->setResult($resultAssignOrdCriteriaTypesToCategory = $this->getSoapClient()->__soapCall('assignOrdCriteriaTypesToCategory', [
-                $paramAssignOrdCriteriaTypesToCategoryRequest,
-            ], [], [], $this->outputHeaders));
-        
-            return $resultAssignOrdCriteriaTypesToCategory;
-        } catch (SoapFault $soapFault) {
-            $this->saveLastError(__METHOD__, $soapFault);
-        
-            return false;
-        }
-    }
-    /**
      * Returns the result
      * @see AbstractSoapClientBase::getResult()
-     * @return \Pggns\MidocoApi\OrderSD\StructType\AssignMidocoRuleResponse|\Pggns\MidocoApi\OrderSD\StructType\AssignOrdCriteriaTypesToCategoryResponse|\Pggns\MidocoApi\OrderSD\StructType\AssignTemplateToSuppliersResponse
+     * @return \Pggns\MidocoApi\OrderSD\StructType\AssignMidocoRuleResponse|\Pggns\MidocoApi\OrderSD\StructType\AssignTemplateToSuppliersResponse
      */
     public function getResult()
     {
